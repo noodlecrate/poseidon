@@ -6,6 +6,8 @@ import * as cookieParser from "cookie-parser";
 import * as bodyParser from "body-parser";
 import * as session from "express-session";
 
+import * as Routes from "./app/routes";
+
 const APP_SECRET = "somesecretkey";
 const APP_PORT = 2900;
 
@@ -20,6 +22,8 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+Routes.setup(app, passport);
 
 app.listen(APP_PORT);
 console.log('Posiedon is hiding in port ' + APP_PORT);
