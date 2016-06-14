@@ -10,7 +10,7 @@ import * as PassportConfig from "./app/passport";
 import * as Routes from "./app/routes";
 
 const APP_SECRET = "somesecretkey";
-const APP_PORT = 2900;
+const APP_PORT = 3000;
 
 let app = express();
 
