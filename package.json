@@ -1,0 +1,19 @@
+{
+  "name": "poseidon",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noodlecrate/poseidon.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/noodlecrate/poseidon/issues"
+  },
+  "homepage": "https://github.com/noodlecrate/poseidon#readme"
+}
