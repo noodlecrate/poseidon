@@ -7,6 +7,7 @@
     "express": "registry:dt/express#4.0.0+20160317120654",
     "express-session": "registry:dt/express-session#0.0.0+20160331200931",
     "method-override": "registry:dt/method-override#0.0.0+20160317120654",
+    "node": "registry:dt/node#6.0.0+20160613154055",
     "passport": "registry:dt/passport#0.2.0+20160317120654",
     "passport-local": "registry:dt/passport-local#0.0.0+20160316155526"
   }
