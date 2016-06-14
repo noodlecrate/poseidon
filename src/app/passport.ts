@@ -3,8 +3,8 @@
 import { Strategy as LocalStrategy } from "passport-local";
 
 let users = [
-    { id: 1, name: 'jameskmonger' },
-    { id: 2, name: 'jamesrichford' }
+    { id: 1, username: 'jameskmonger' },
+    { id: 2, username: 'jamesrichford' }
 ];
 
 export function setup (passport: any) {
@@ -19,10 +19,10 @@ export function setup (passport: any) {
         done(null, userForId);
     });
 
-    passport.use('local-login', new LocalStrategy((id, password, done) => {
-        let usersForId = users.filter(u => u.id === parseInt(id));
+    passport.use('local-login', new LocalStrategy((username, password, done) => {
+        let usersForUsername = users.filter(u => u.username === username);
 
-        if (usersForId.length === 0) {
+        if (usersForUsername.length === 0) {
             return done (
                 new Error("No user found.")
             );
@@ -34,7 +34,7 @@ export function setup (passport: any) {
             );
         }
 
-        return done (null, usersForId[0]);
+        return done (null, usersForUsername[0]);
     }));
 
     // app.post('/session', do all our passport stuff here);
