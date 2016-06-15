@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+      "build": "tsc -p src",
       "start": "node ./build/server.js"
   },
   "repository": {
