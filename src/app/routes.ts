@@ -4,8 +4,20 @@ export function setup (app: any, passport: any) {
 
     // app.post('/session', do all our passport stuff here);
 
-    app.get('/wickawicka', (req, res, next) => {
-        console.log(req.user);
+    app.get('/reviews', (req, res, next) => {
+        if (req.isAuthenticated()) {
+            console.log(`the user ${req.user.username} has just requested all reviews`);
+        } else {
+            console.log(`an unauthenticated user has just requested all reviews`);
+        }
+
+        res.send([]);
+    });
+
+    app.get('/sessiontest', (req, res, next) => {
+        console.log(`the user ${req.user.username} has just hit /sessiontest`);
+
+        return res.sendStatus(201);
     });
 
     app.post('/session', (req, res, next) => {
