@@ -26,12 +26,18 @@ export class UserManager {
         });
     }
 
-    public attemptLogin (username: string, password: string): boolean {
+    public attemptLogin (username: string, password: string): UserModel {
         let matches = this._users.filter(
             u => u.username === username && u.password === password
         );
 
-        return (matches.length !== 0);
+        return matches[0];
+    }
+
+    public getForId (id: number): UserModel {
+        return this._users.filter(
+            u => u.id === id
+        )[0];
     }
 
 }

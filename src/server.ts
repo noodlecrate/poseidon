@@ -6,15 +6,18 @@ import * as cookieParser from "cookie-parser";
 import * as bodyParser from "body-parser";
 import * as session from "express-session";
 
-import * as PassportConfig from "./app/passport";
 import * as Routes from "./app/routes";
+
+import { AuthenticationManager } from "./managers/authentication-manager";
+import { UserManager } from "./managers/user-manager";
 
 const APP_SECRET = "somesecretkey";
 const APP_PORT = 3000;
 
 let app = express();
 
-PassportConfig.setup(passport);
+let userManager = new UserManager();
+let authenticationManager = new AuthenticationManager(passport, userManager);
 
 app.use(cookieParser());
 app.use(bodyParser.json());
