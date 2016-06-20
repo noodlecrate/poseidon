@@ -12,19 +12,25 @@ export class UserRepository implements IUserRepository {
         this._users.push(<UserModel> {
             id: 1,
             username: "jameskmonger",
-            password: "correct"
+            password: "correct",
+            firstName: "James",
+            lastName: "Monger"
         });
 
         this._users.push(<UserModel> {
             id: 2,
             username: "james.richford",
-            password: "correct"
+            password: "correct",
+            firstName: "James",
+            lastName: "Richford"
         });
 
         this._users.push(<UserModel> {
             id: 3,
             username: "jf",
-            password: "correct"
+            password: "correct",
+            firstName: "James",
+            lastName: "Finnerty"
         });
     }
 
