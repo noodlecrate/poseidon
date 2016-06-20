@@ -23,6 +23,8 @@
     "files": [
         "app/passport.ts",
         "app/routes.ts",
+        "managers/user-manager.ts",
+        "models/user-model.ts",
         "server.ts"
     ],
     "atom": {
