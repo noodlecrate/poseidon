@@ -15,6 +15,11 @@ import { ReviewManager } from "./managers/review-manager";
 import { UserRepository } from "./repositories/user-repository";
 import { ReviewRepository } from "./repositories/review-repository";
 
+import { UserSerializer } from "./serializers/user-serializer";
+import { ReviewSerializer } from "./serializers/review-serializer";
+
+import { ReviewService } from "./services/review-service";
+
 const APP_SECRET = "somesecretkey";
 const APP_PORT = 3000;
 
@@ -23,10 +28,15 @@ let app = express();
 let userRepository = new UserRepository();
 let reviewRepository = new ReviewRepository(userRepository);
 
+let userSerializer = new UserSerializer();
+let reviewSerializer = new ReviewSerializer(userSerializer);
+
 let userManager = new UserManager(userRepository);
-let reviewManager = new ReviewManager(reviewRepository);
+let reviewManager = new ReviewManager(reviewRepository, reviewSerializer);
 
 let authenticationManager = new AuthenticationManager(passport, userManager);
+
+let reviewService = new ReviewService(reviewManager);
 
 app.use(cookieParser());
 app.use(bodyParser.json());
@@ -49,7 +59,9 @@ app.use((req, res, next) => {
 app.use(passport.initialize());
 app.use(passport.session());
 
-Routes.setup(app, passport);
+//Routes.setup(app, passport);
+
+reviewService.registerRoutes(app);
 
 app.listen(APP_PORT);
 console.log('Posiedon is hiding in port ' + APP_PORT);

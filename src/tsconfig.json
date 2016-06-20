@@ -22,6 +22,8 @@
     ],
     "files": [
         "app/routes.ts",
+        "dtos/review-dto.ts",
+        "dtos/user-dto.ts",
         "managers/_interfaces/passport.i.ts",
         "managers/authentication-manager.ts",
         "managers/review-manager.ts",
@@ -34,7 +36,10 @@
         "repositories/_interfaces/user-repository.i.ts",
         "repositories/review-repository.ts",
         "repositories/user-repository.ts",
-        "server.ts"
+        "serializers/review-serializer.ts",
+        "serializers/user-serializer.ts",
+        "server.ts",
+        "services/review-service.ts"
     ],
     "atom": {
         "rewriteTsconfig": true
