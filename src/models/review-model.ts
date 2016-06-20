@@ -6,5 +6,6 @@ export class ReviewModel {
     author: UserModel;
     title: string;
     body: string;
+    imageUrl: string;
 
 }
