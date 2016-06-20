@@ -26,4 +26,12 @@ export class UserManager {
         });
     }
 
+    public attemptLogin (username: string, password: string): boolean {
+        let matches = this._users.filter(
+            u => u.username === username && u.password === password
+        );
+
+        return (matches.length !== 0);
+    }
+
 }
