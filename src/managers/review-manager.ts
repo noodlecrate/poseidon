@@ -1,13 +1,12 @@
 import { ReviewModel } from "../models/review-model";
+import { ReviewRepository } from "../repositories/review-repository";
 
 export class ReviewManager {
 
-    private _reviews: Array<ReviewModel>;
+    private _reviewRepository: ReviewRepository;
 
-    constructor () {
-        this._reviews = [];
-
-
+    constructor (reviewRepository: ReviewRepository) {
+        this._reviewRepository = reviewRepository;
     }
 
 }

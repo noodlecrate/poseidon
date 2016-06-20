@@ -22,7 +22,7 @@ export class AuthenticationManager {
         });
 
         this._passport.deserializeUser((id, done) => {
-            done(null, this._userManager.getForId(id));
+            done(null, this._userManager.getById(id));
         });
 
         this._passport.use('local-login', new LocalStrategy((username, password, done) => {

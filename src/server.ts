@@ -10,13 +10,22 @@ import * as Routes from "./app/routes";
 
 import { AuthenticationManager } from "./managers/authentication-manager";
 import { UserManager } from "./managers/user-manager";
+import { ReviewManager } from "./managers/review-manager";
+
+import { UserRepository } from "./repositories/user-repository";
+import { ReviewRepository } from "./repositories/review-repository";
 
 const APP_SECRET = "somesecretkey";
 const APP_PORT = 3000;
 
 let app = express();
 
-let userManager = new UserManager();
+let userRepository = new UserRepository();
+let reviewRepository = new ReviewRepository(userRepository);
+
+let userManager = new UserManager(userRepository);
+let reviewManager = new ReviewManager(reviewRepository);
+
 let authenticationManager = new AuthenticationManager(passport, userManager);
 
 app.use(cookieParser());
