@@ -25,6 +25,7 @@
         "managers/_interfaces/passport.i.ts",
         "managers/authentication-manager.ts",
         "managers/user-manager.ts",
+        "models/review-model.ts",
         "models/user-model.ts",
         "server.ts"
     ],
