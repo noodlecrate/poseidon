@@ -31,7 +31,7 @@ export class ReviewRepository implements IReviewRepository {
             author: this._userRepository.getById(2),
             title: "Not a fan",
             body: "noodles were too spicy for my tongue",
-            imageUrl: "noodles were too spicy for my tongue"
+            imageUrl: "http://i.dailymail.co.uk/i/pix/2014/09/03/article-2740204-1C5E561F00000578-366_634x626.jpg"
         });
 
         this._reviews.push(<ReviewModel> {
