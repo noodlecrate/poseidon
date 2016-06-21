@@ -23,4 +23,10 @@ export class ReviewManager {
         return serialized;
     }
 
+    public getById(id: number): ReviewDto {
+        let model = this._reviewRepository.getById(id);
+
+        return this._reviewSerializer.serialize(model);
+    }
+
 }

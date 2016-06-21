@@ -13,10 +13,17 @@ export class ReviewService {
 
     public registerRoutes (app: Express) {
         app.get('/reviews/', this._getAll.bind(this));
+        app.get('/reviews/:id', this._getById.bind(this));
     }
 
     private _getAll(req: any, res: any): any {
         res.send(this._reviewManager.getAll());
+    }
+
+    private _getById(req: any, res: any): any {
+        let requestedId = parseInt(req.params['id']);
+
+        res.send(this._reviewManager.getById(requestedId));
     }
 
 }
