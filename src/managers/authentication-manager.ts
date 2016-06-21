@@ -1,22 +1,27 @@
 /// <reference path="../../typings/index.d.ts"/>
 
+import { inject, injectable } from "inversify";
+
 import { Strategy as LocalStrategy } from "passport-local";
 import { IPassport } from "./_interfaces/passport.i";
-import { UserManager } from "./user-manager";
+import { IUserManager } from "./_interfaces/user-manager.i";
+import { IAuthenticationManager } from "./_interfaces/authentication-manager.i";
 
-export class AuthenticationManager {
+@injectable()
+export class AuthenticationManager implements IAuthenticationManager {
 
     private _passport: IPassport;
-    private _userManager: UserManager;
+    private _userManager: IUserManager;
 
-    constructor (passport: IPassport, userManager: UserManager) {
+    constructor (
+        @inject("IPassport") passport: IPassport,
+        @inject("IUserManager") userManager: IUserManager
+    ) {
         this._passport = passport;
         this._userManager = userManager;
-
-        this._setupPassport();
     }
 
-    private _setupPassport(): void {
+    public setupPassport(): void {
         this._passport.serializeUser((user, done) => {
             done(null, user.id);
         });

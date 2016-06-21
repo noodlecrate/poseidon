@@ -1,15 +1,19 @@
+import { inject, injectable } from "inversify";
+
 import { IReviewRepository } from "./_interfaces/review-repository.i";
 import { IUserRepository } from "./_interfaces/user-repository.i";
 
 import { ReviewModel } from "../models/review-model";
 
-
+@injectable()
 export class ReviewRepository implements IReviewRepository {
 
     private _userRepository: IUserRepository;
     private _reviews: Array<ReviewModel>;
 
-    constructor (userRepository: IUserRepository) {
+    constructor (
+        @inject("IUserRepository") userRepository: IUserRepository
+    ) {
         this._userRepository = userRepository;
 
         this._reviews = [];

@@ -1,12 +1,18 @@
-import { UserSerializer } from "./user-serializer";
+import { inject, injectable } from "inversify";
+
+import { IUserSerializer } from "./_interfaces/user-serializer.i";
 import { ReviewModel } from "../models/review-model";
 import { ReviewDto } from "../dtos/review-dto";
+import { IReviewSerializer } from "./_interfaces/review-serializer.i";
 
-export class ReviewSerializer {
+@injectable()
+export class ReviewSerializer implements IReviewSerializer {
 
-    private _userSerializer: UserSerializer;
+    private _userSerializer: IUserSerializer;
 
-    constructor (userSerializer: UserSerializer) {
+    constructor (
+        @inject("IUserSerializer") userSerializer: IUserSerializer
+    ) {
         this._userSerializer = userSerializer;
     }
 

@@ -1,14 +1,22 @@
+import { inject, injectable } from "inversify";
+
 import { ReviewModel } from "../models/review-model";
 import { ReviewDto } from "../dtos/review-dto";
-import { ReviewRepository } from "../repositories/review-repository";
-import { ReviewSerializer } from "../serializers/review-serializer";
 
-export class ReviewManager {
+import { IReviewRepository } from "../repositories/repositories.namespace";
+import { IReviewSerializer } from "../serializers/serializers.namespace";
+import { IReviewManager } from "./_interfaces/review-manager.i";
 
-    private _reviewRepository: ReviewRepository;
-    private _reviewSerializer: ReviewSerializer;
+@injectable()
+export class ReviewManager implements IReviewManager {
 
-    constructor (reviewRepository: ReviewRepository, reviewSerializer: ReviewSerializer) {
+    private _reviewRepository: IReviewRepository;
+    private _reviewSerializer: IReviewSerializer;
+
+    constructor (
+        @inject("IReviewRepository") reviewRepository: IReviewRepository,
+        @inject("IReviewSerializer") reviewSerializer: IReviewSerializer
+    ) {
         this._reviewRepository = reviewRepository;
         this._reviewSerializer = reviewSerializer;
     }
@@ -21,6 +29,12 @@ export class ReviewManager {
         );
 
         return serialized;
+    }
+
+    public getById(id: number): ReviewDto {
+        let model = this._reviewRepository.getById(id);
+
+        return this._reviewSerializer.serialize(model);
     }
 
 }
