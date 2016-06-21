@@ -2,14 +2,16 @@
 
 import { Express } from "express-serve-static-core";
 import { IServiceManager, IReviewService } from "./services.namespace";
-import { inject } from "inversify";
+import { inject, injectable } from "inversify";
 
-@inject("IReviewService")
+@injectable()
 export class ServiceManager implements IServiceManager {
 
     private _reviewService: IReviewService;
 
-    constructor (reviewService: IReviewService) {
+    constructor (
+        @inject("IReviewService") reviewService: IReviewService
+    ) {
         this._reviewService = reviewService;
     }
 

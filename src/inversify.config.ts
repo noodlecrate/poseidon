@@ -1,3 +1,5 @@
+/// <reference path="../node_modules/inversify-dts/inversify/inversify.d.ts" />
+
 import { Kernel } from "inversify";
 
 import {
@@ -39,6 +41,6 @@ kernel.bind<IAuthenticationManager>("IAuthenticationManager").to(AuthenticationM
 kernel.bind<IReviewManager>("IReviewManager").to(ReviewManager);
 kernel.bind<IUserManager>("IUserManager").to(UserManager);
 
-kernel.bind<IPassport>("IPassport").toValue(passport);
+kernel.bind<IPassport>("IPassport").toConstantValue(passport);
 
 export default kernel;

@@ -1,7 +1,9 @@
-import { IUserRepository } from "./_interfaces/user-repository.i";
+import { injectable } from "inversify";
 
+import { IUserRepository } from "./_interfaces/user-repository.i";
 import { UserModel } from "../models/user-model";
 
+@injectable()
 export class UserRepository implements IUserRepository {
 
     private _users: Array<UserModel>;

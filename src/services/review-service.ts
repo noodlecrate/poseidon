@@ -1,14 +1,19 @@
 /// <reference path="../../typings/index.d.ts"/>
 
+import { inject, injectable } from "inversify";
+
 import { Express } from "express-serve-static-core";
 import { IReviewManager } from "../managers/managers.namespace";
 import { IReviewService } from "./_interfaces/review-service.i";
 
+@injectable()
 export class ReviewService implements IReviewService {
 
     private _reviewManager: IReviewManager;
 
-    constructor (reviewManager: IReviewManager) {
+    constructor (
+        @inject("IReviewManager") reviewManager: IReviewManager
+    ) {
         this._reviewManager = reviewManager;
     }
 

@@ -1,4 +1,4 @@
-import { inject } from "inversify";
+import { inject, injectable } from "inversify";
 
 import { ReviewModel } from "../models/review-model";
 import { ReviewDto } from "../dtos/review-dto";
@@ -7,13 +7,16 @@ import { IReviewRepository } from "../repositories/repositories.namespace";
 import { IReviewSerializer } from "../serializers/serializers.namespace";
 import { IReviewManager } from "./_interfaces/review-manager.i";
 
-@inject("IReviewRepository", "IReviewSerializer")
+@injectable()
 export class ReviewManager implements IReviewManager {
 
     private _reviewRepository: IReviewRepository;
     private _reviewSerializer: IReviewSerializer;
 
-    constructor (reviewRepository: IReviewRepository, reviewSerializer: IReviewSerializer) {
+    constructor (
+        @inject("IReviewRepository") reviewRepository: IReviewRepository,
+        @inject("IReviewSerializer") reviewSerializer: IReviewSerializer
+    ) {
         this._reviewRepository = reviewRepository;
         this._reviewSerializer = reviewSerializer;
     }

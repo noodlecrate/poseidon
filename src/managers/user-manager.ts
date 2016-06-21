@@ -1,15 +1,17 @@
-import { inject } from "inversify";
+import { inject, injectable } from "inversify";
 
 import { UserModel } from "../models/user-model";
 import { IUserRepository } from "../repositories/repositories.namespace";
 import { IUserManager } from "./_interfaces/user-manager.i";
 
-@inject("IUserRepository")
+@injectable()
 export class UserManager implements IUserManager {
 
     private _userRepository: IUserRepository;
 
-    constructor (userRepository: IUserRepository) {
+    constructor (
+        @inject("IUserRepository") userRepository: IUserRepository
+    ) {
         this._userRepository = userRepository;
     }
 

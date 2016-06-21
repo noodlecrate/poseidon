@@ -1,7 +1,10 @@
+import { injectable } from "inversify";
+
 import { UserModel } from "../models/user-model";
 import { UserDto } from "../dtos/user-dto";
 import { IUserSerializer } from "./_interfaces/user-serializer.i";
 
+@injectable()
 export class UserSerializer implements IUserSerializer {
 
     public serialize (model: UserModel): UserDto {
