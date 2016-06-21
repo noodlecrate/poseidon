@@ -1,9 +1,11 @@
+import { inject } from "inversify";
+
 import { IReviewRepository } from "./_interfaces/review-repository.i";
 import { IUserRepository } from "./_interfaces/user-repository.i";
 
 import { ReviewModel } from "../models/review-model";
 
-
+@inject("IUserRepository")
 export class ReviewRepository implements IReviewRepository {
 
     private _userRepository: IUserRepository;
