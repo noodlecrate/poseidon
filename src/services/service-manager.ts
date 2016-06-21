@@ -1,7 +1,7 @@
 /// <reference path="../../typings/index.d.ts"/>
 
-import { Express } from "express-serve-static-core";
 import { inject, injectable } from "inversify";
+import { Express } from "express-serve-static-core";
 
 import {
     IServiceManager,

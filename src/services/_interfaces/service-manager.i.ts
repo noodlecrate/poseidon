@@ -1,7 +1,4 @@
-/// <reference path="../../../typings/index.d.ts"/>
-
-import { Express } from "express-serve-static-core";
-import { IService } from "./service.i";
+import { IService } from "../services.namespace";
 
 export interface IServiceManager extends IService {
 

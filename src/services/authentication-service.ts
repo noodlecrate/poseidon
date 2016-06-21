@@ -3,7 +3,7 @@
 import { inject, injectable } from "inversify";
 import { Express } from "express-serve-static-core";
 
-import { IAuthenticationService } from "./_interfaces/authentication-service.i";
+import { IAuthenticationService } from "./services.namespace";
 import { IAuthenticationManager, IPassport } from "../managers/managers.namespace";
 
 @injectable()
