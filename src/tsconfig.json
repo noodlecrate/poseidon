@@ -32,6 +32,8 @@
         "managers/managers.namespace.ts",
         "managers/review-manager.ts",
         "managers/user-manager.ts",
+        "models/_interfaces/model.i.ts",
+        "models/models.namespace.ts",
         "models/review-model.ts",
         "models/user-model.ts",
         "repositories/_interfaces/generic/get-all-repository.i.ts",
