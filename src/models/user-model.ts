@@ -1,4 +1,6 @@
-export class UserModel {
+import { IModel } from "./_namespace";
+
+export class UserModel implements IModel {
 
     id: number;
     username: string;

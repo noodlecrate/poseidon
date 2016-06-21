@@ -3,9 +3,12 @@
 import { inject, injectable } from "inversify";
 
 import { Strategy as LocalStrategy } from "passport-local";
-import { IPassport } from "./_interfaces/passport.i";
-import { IUserManager } from "./_interfaces/user-manager.i";
-import { IAuthenticationManager } from "./_interfaces/authentication-manager.i";
+
+import {
+    IPassport,
+    IUserManager,
+    IAuthenticationManager
+} from "./_namespace";
 
 @injectable()
 export class AuthenticationManager implements IAuthenticationManager {

@@ -1,10 +1,10 @@
 /// <reference path="../../typings/index.d.ts"/>
 
 import { inject, injectable } from "inversify";
-
 import { Express } from "express-serve-static-core";
-import { IReviewManager } from "../managers/managers.namespace";
-import { IReviewService } from "./_interfaces/review-service.i";
+
+import { IReviewManager } from "../managers/_namespace";
+import { IReviewService } from "./_namespace";
 
 @injectable()
 export class ReviewService implements IReviewService {

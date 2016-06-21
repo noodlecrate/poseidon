@@ -6,24 +6,24 @@ import {
     IReviewService, ReviewService,
     IServiceManager, ServiceManager,
     IAuthenticationService, AuthenticationService
-} from "./services/services.namespace";
+} from "./services/_namespace";
 
 import {
     IUserRepository, UserRepository,
     IReviewRepository, ReviewRepository
-} from "./repositories/repositories.namespace";
+} from "./repositories/_namespace";
 
 import {
     IUserSerializer, UserSerializer,
     IReviewSerializer, ReviewSerializer
-} from "./serializers/serializers.namespace";
+} from "./serializers/_namespace";
 
 import {
     IAuthenticationManager, AuthenticationManager,
     IReviewManager, ReviewManager,
     IUserManager, UserManager,
     IPassport
-} from "./managers/managers.namespace";
+} from "./managers/_namespace";
 
 import * as passport from "passport";
 

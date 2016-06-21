@@ -1,11 +1,10 @@
 import { inject, injectable } from "inversify";
 
-import { ReviewModel } from "../models/review-model";
-import { ReviewDto } from "../dtos/review-dto";
-
-import { IReviewRepository } from "../repositories/repositories.namespace";
-import { IReviewSerializer } from "../serializers/serializers.namespace";
-import { IReviewManager } from "./_interfaces/review-manager.i";
+import { ReviewModel } from "../models/_namespace";
+import { ReviewDto } from "../dtos/_namespace";
+import { IReviewRepository } from "../repositories/_namespace";
+import { IReviewSerializer } from "../serializers/_namespace";
+import { IReviewManager } from "./_namespace";
 
 @injectable()
 export class ReviewManager implements IReviewManager {

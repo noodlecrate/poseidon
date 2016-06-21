@@ -3,8 +3,8 @@
 import { inject, injectable } from "inversify";
 import { Express } from "express-serve-static-core";
 
-import { IAuthenticationService } from "./_interfaces/authentication-service.i";
-import { IAuthenticationManager, IPassport } from "../managers/managers.namespace";
+import { IAuthenticationService } from "./_namespace";
+import { IAuthenticationManager, IPassport } from "../managers/_namespace";
 
 @injectable()
 export class AuthenticationService implements IAuthenticationService {

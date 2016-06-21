@@ -9,7 +9,7 @@ import * as bodyParser from "body-parser";
 import * as session from "express-session";
 
 import kernel from "./inversify.config";
-import { IServiceManager } from "./services/services.namespace";
+import { IServiceManager } from "./services/_namespace";
 
 const APP_SECRET = "somesecretkey";
 const APP_PORT = 3000;

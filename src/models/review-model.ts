@@ -1,6 +1,6 @@
-import { UserModel } from "./user-model";
+import { IModel, UserModel } from "./_namespace";
 
-export class ReviewModel {
+export class ReviewModel implements IModel {
 
     id: number;
     author: UserModel;

@@ -1,26 +1,34 @@
 /// <reference path="../../typings/index.d.ts"/>
 
-import { Express } from "express-serve-static-core";
-import { IServiceManager, IReviewService, IAuthenticationService } from "./services.namespace";
 import { inject, injectable } from "inversify";
+import { Express } from "express-serve-static-core";
+
+import {
+    IServiceManager,
+    IReviewService,
+    IAuthenticationService,
+    IService
+} from "./_namespace";
 
 @injectable()
 export class ServiceManager implements IServiceManager {
 
-    private _reviewService: IReviewService;
-    private _authenticationService: IAuthenticationService;
+    private _containedServices: Array<IService>;
 
     constructor (
         @inject("IReviewService") reviewService: IReviewService,
         @inject("IAuthenticationService") authenticationService: IAuthenticationService
     ) {
-        this._reviewService = reviewService;
-        this._authenticationService = authenticationService;
+        this._containedServices = [
+            reviewService,
+            authenticationService
+        ];
     }
 
     public registerRoutes (app: Express) {
-        this._authenticationService.registerRoutes(app);
-        this._reviewService.registerRoutes(app);
+        this._containedServices.forEach(svc => {
+            svc.registerRoutes(app);
+        });
     }
 
 }

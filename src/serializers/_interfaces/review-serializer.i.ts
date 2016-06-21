@@ -1,5 +1,5 @@
-import { ReviewModel } from "../../models/review-model";
-import { ReviewDto } from "../../dtos/review-dto";
+import { ReviewModel } from "../../models/_namespace";
+import { ReviewDto } from "../../dtos/_namespace";
 
 export interface IReviewSerializer {
 

@@ -1,9 +1,5 @@
-/// <reference path="../../../typings/index.d.ts"/>
+import { IService } from "../_namespace";
 
-import { Express } from "express-serve-static-core";
-
-export interface IReviewService {
-
-    registerRoutes (app: Express): void;
+export interface IReviewService extends IService {
 
 }
