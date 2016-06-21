@@ -38,6 +38,6 @@ kernel.bind<IReviewSerializer>("IReviewSerializer").to(ReviewSerializer);
 kernel.bind<IAuthenticationManager>("IAuthenticationManager").to(AuthenticationManager);
 kernel.bind<IReviewManager>("IReviewManager").to(ReviewManager);
 kernel.bind<IUserManager>("IUserManager").to(UserManager);
-kernel.bind<IPassport>("IPassport").to(<any> passport);
+kernel.bind<IPassport>("IPassport").toValue(passport);
 
 export default kernel;
