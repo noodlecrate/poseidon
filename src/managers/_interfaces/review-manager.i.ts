@@ -1,4 +1,4 @@
-import { ReviewDto } from "../../dtos/review-dto";
+import { ReviewDto } from "../../dtos/dtos.namespace";
 
 export interface IReviewManager {
 
