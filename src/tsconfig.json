@@ -21,6 +21,7 @@
         "!node_modules/**"
     ],
     "files": [
+        "dtos/dtos.namespace.ts",
         "dtos/review-dto.ts",
         "dtos/user-dto.ts",
         "inversify.config.ts",

@@ -1,9 +1,8 @@
 import { inject, injectable } from "inversify";
 
-import { IUserSerializer } from "./_interfaces/user-serializer.i";
-import { ReviewModel } from "../models/review-model";
-import { ReviewDto } from "../dtos/review-dto";
-import { IReviewSerializer } from "./_interfaces/review-serializer.i";
+import { IUserSerializer, IReviewSerializer } from "./serializers.namespace";
+import { ReviewModel } from "../models/models.namespace";
+import { ReviewDto } from "../dtos/dtos.namespace";
 
 @injectable()
 export class ReviewSerializer implements IReviewSerializer {
