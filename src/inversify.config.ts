@@ -15,6 +15,15 @@ import {
     IReviewSerializer, ReviewSerializer
 } from "./serializers/serializers.namespace";
 
+import {
+    IAuthenticationManager, AuthenticationManager,
+    IReviewManager, ReviewManager,
+    IUserManager, UserManager,
+    IPassport
+} from "./managers/managers.namespace";
+
+import * as passport from "passport";
+
 var kernel = new Kernel();
 
 kernel.bind<IReviewService>("IReviewService").to(ReviewService);
@@ -25,5 +34,10 @@ kernel.bind<IReviewRepository>("IReviewRepository").to(ReviewRepository);
 
 kernel.bind<IUserSerializer>("IUserSerializer").to(UserSerializer);
 kernel.bind<IReviewSerializer>("IReviewSerializer").to(ReviewSerializer);
+
+kernel.bind<IAuthenticationManager>("IAuthenticationManager").to(AuthenticationManager);
+kernel.bind<IReviewManager>("IReviewManager").to(ReviewManager);
+kernel.bind<IUserManager>("IUserManager").to(UserManager);
+kernel.bind<IPassport>("IPassport").to(<any> passport);
 
 export default kernel;

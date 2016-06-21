@@ -1,13 +1,14 @@
 /// <reference path="../../typings/index.d.ts"/>
 
 import { Express } from "express-serve-static-core";
-import { ReviewManager } from "../managers/review-manager";
+import { IReviewManager } from "../managers/managers.namespace";
+import { IReviewService } from "./_interfaces/review-service.i";
 
-export class ReviewService {
+export class ReviewService implements IReviewService {
 
-    private _reviewManager: ReviewManager;
+    private _reviewManager: IReviewManager;
 
-    constructor (reviewManager: ReviewManager) {
+    constructor (reviewManager: IReviewManager) {
         this._reviewManager = reviewManager;
     }
 
