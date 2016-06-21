@@ -15,12 +15,12 @@ export class AuthenticationService implements IAuthenticationService {
         @inject("IAuthenticationManager") authenticationManager: IAuthenticationManager,
         @inject("IPassport") passport: IPassport
     ) {
+        this._passport = passport;
         authenticationManager.setupPassport();
     }
 
     public registerRoutes(app: Express): void {
-        app.post('/authentication', this._authenticationPost.bind(this));
-        app.get('/sessiontest', this._sessionTest.bind(this));
+        app.post('/session', this._authenticationPost.bind(this));
     }
 
     private _authenticationPost(req: any, res: any, next: any): any {
@@ -43,16 +43,6 @@ export class AuthenticationService implements IAuthenticationService {
                 return res.sendStatus(201);
             });
         })(req, res, next);
-    }
-
-    private _sessionTest(req: any, res: any): any {
-        if (req.isAuthenticated()) {
-            console.log(`the user ${req.user.username} has just hit /sessiontest`);
-        } else {
-            console.log(`an unauthenticated user has just hit /sessiontest`);
-        }
-
-        res.sendStatus(200);
     }
 
 }
