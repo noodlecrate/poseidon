@@ -8,7 +8,7 @@ import {
     IPassport,
     IUserManager,
     IAuthenticationManager
-} from "./managers.namespace";
+} from "./_namespace";
 
 @injectable()
 export class AuthenticationManager implements IAuthenticationManager {

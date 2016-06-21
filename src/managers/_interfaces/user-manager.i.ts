@@ -1,4 +1,4 @@
-import { UserModel } from "../../models/models.namespace";
+import { UserModel } from "../../models/_namespace";
 
 export interface IUserManager {
 

@@ -1,4 +1,4 @@
-import { IModel } from "./models.namespace";
+import { IModel } from "./_namespace";
 
 export class UserModel implements IModel {
 

@@ -1,5 +1,5 @@
-import { IGetAllRepository, IGetByIdRepository } from "../repositories.namespace";
-import { UserModel } from "../../models/models.namespace";
+import { IGetAllRepository, IGetByIdRepository } from "../_namespace";
+import { UserModel } from "../../models/_namespace";
 
 export interface IUserRepository
     extends IGetAllRepository<UserModel>, IGetByIdRepository<UserModel> {

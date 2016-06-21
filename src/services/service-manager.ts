@@ -8,7 +8,7 @@ import {
     IReviewService,
     IAuthenticationService,
     IService
-} from "./services.namespace";
+} from "./_namespace";
 
 @injectable()
 export class ServiceManager implements IServiceManager {

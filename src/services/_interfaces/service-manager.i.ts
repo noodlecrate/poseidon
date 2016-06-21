@@ -1,4 +1,4 @@
-import { IService } from "../services.namespace";
+import { IService } from "../_namespace";
 
 export interface IServiceManager extends IService {
 

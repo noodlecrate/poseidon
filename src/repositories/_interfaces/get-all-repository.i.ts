@@ -1,4 +1,4 @@
-import { IModel } from "../../models/models.namespace";
+import { IModel } from "../../models/_namespace";
 
 export interface IGetAllRepository <TModel extends IModel> {
 

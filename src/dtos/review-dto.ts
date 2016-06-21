@@ -1,4 +1,4 @@
-import { UserDto } from "./dtos.namespace";
+import { UserDto } from "./_namespace";
 
 export class ReviewDto {
 
