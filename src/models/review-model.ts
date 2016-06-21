@@ -1,5 +1,4 @@
-import { IModel } from "./_interfaces/model.i";
-import { UserModel } from "./user-model";
+import { IModel, UserModel } from "./models.namespace";
 
 export class ReviewModel implements IModel {
 
