@@ -21,7 +21,6 @@
         "!node_modules/**"
     ],
     "files": [
-        "app/routes.ts",
         "dtos/review-dto.ts",
         "dtos/user-dto.ts",
         "inversify.config.ts",
