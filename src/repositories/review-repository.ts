@@ -1,9 +1,7 @@
 import { inject, injectable } from "inversify";
 
-import { IReviewRepository } from "./_interfaces/review-repository.i";
-import { IUserRepository } from "./_interfaces/user-repository.i";
-
-import { ReviewModel } from "../models/review-model";
+import { IReviewRepository, IUserRepository } from "./repositories.namespace";
+import { ReviewModel } from "../models/models.namespace";
 
 @injectable()
 export class ReviewRepository implements IReviewRepository {
