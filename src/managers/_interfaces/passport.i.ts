@@ -15,4 +15,9 @@ export interface IPassport {
         strategy: any
     ): void;
 
+    authenticate(
+        strategy: any,
+        callback: any
+    ): any;
+
 }

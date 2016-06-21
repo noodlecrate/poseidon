@@ -48,8 +48,10 @@
         "serializers/serializers.namespace.ts",
         "serializers/user-serializer.ts",
         "server.ts",
+        "services/_interfaces/authentication-service.i.ts",
         "services/_interfaces/review-service.i.ts",
         "services/_interfaces/service-manager.i.ts",
+        "services/authentication-service.ts",
         "services/review-service.ts",
         "services/service-manager.ts",
         "services/services.namespace.ts"
