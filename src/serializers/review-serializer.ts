@@ -1,8 +1,9 @@
 import { UserSerializer } from "./user-serializer";
 import { ReviewModel } from "../models/review-model";
 import { ReviewDto } from "../dtos/review-dto";
+import { IReviewSerializer } from "./_interfaces/review-serializer.i";
 
-export class ReviewSerializer {
+export class ReviewSerializer implements IReviewSerializer {
 
     private _userSerializer: UserSerializer;
 
