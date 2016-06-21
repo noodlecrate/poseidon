@@ -50,6 +50,7 @@
         "services/_interfaces/authentication-service.i.ts",
         "services/_interfaces/review-service.i.ts",
         "services/_interfaces/service-manager.i.ts",
+        "services/_interfaces/service.i.ts",
         "services/authentication-service.ts",
         "services/review-service.ts",
         "services/service-manager.ts",
