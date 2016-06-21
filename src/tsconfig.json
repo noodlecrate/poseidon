@@ -24,6 +24,7 @@
         "app/routes.ts",
         "dtos/review-dto.ts",
         "dtos/user-dto.ts",
+        "inversify.config.ts",
         "managers/_interfaces/passport.i.ts",
         "managers/authentication-manager.ts",
         "managers/review-manager.ts",
@@ -39,7 +40,11 @@
         "serializers/review-serializer.ts",
         "serializers/user-serializer.ts",
         "server.ts",
-        "services/review-service.ts"
+        "services/_interfaces/review-service.i.ts",
+        "services/_interfaces/service-manager.i.ts",
+        "services/review-service.ts",
+        "services/service-manager.ts",
+        "services/services.namespace.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

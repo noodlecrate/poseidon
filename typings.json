@@ -7,6 +7,7 @@
     "express": "registry:dt/express#4.0.0+20160317120654",
     "express-serve-static-core": "registry:dt/express-serve-static-core#0.0.0+20160602151406",
     "express-session": "registry:dt/express-session#0.0.0+20160331200931",
+    "inversify": "registry:dt/inversify#2.0.0-alpha.3+20160316155526",
     "method-override": "registry:dt/method-override#0.0.0+20160317120654",
     "mime": "registry:dt/mime#0.0.0+20160316155526",
     "node": "registry:dt/node#6.0.0+20160613154055",
