@@ -5,7 +5,8 @@ import { Kernel } from "inversify";
 import {
     IReviewService, ReviewService,
     IServiceManager, ServiceManager,
-    IAuthenticationService, AuthenticationService
+    IAuthenticationService, AuthenticationService,
+    IUserService, UserService
 } from "./services/_namespace";
 
 import {
@@ -29,9 +30,10 @@ import * as passport from "passport";
 
 var kernel = new Kernel();
 
-kernel.bind<IReviewService>("IReviewService").to(ReviewService);
 kernel.bind<IServiceManager>("IServiceManager").to(ServiceManager);
+kernel.bind<IReviewService>("IReviewService").to(ReviewService);
 kernel.bind<IAuthenticationService>("IAuthenticationService").to(AuthenticationService);
+kernel.bind<IUserService>("IUserService").to(UserService);
 
 kernel.bind<IUserRepository>("IUserRepository").to(UserRepository);
 kernel.bind<IReviewRepository>("IReviewRepository").to(ReviewRepository);

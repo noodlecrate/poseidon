@@ -54,10 +54,12 @@
         "services/_interfaces/review-service.i.ts",
         "services/_interfaces/service-manager.i.ts",
         "services/_interfaces/service.i.ts",
+        "services/_interfaces/user-service.i.ts",
         "services/_namespace.ts",
         "services/authentication-service.ts",
         "services/review-service.ts",
-        "services/service-manager.ts"
+        "services/service-manager.ts",
+        "services/user-service.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

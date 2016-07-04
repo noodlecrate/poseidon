@@ -12,7 +12,8 @@ export class UserSerializer implements IUserSerializer {
             id: model.id,
             username: model.username,
             firstName: model.firstName,
-            lastName: model.lastName
+            lastName: model.lastName,
+            profileImage: model.profileImage
         }
     }
 

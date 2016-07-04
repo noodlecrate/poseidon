@@ -7,6 +7,7 @@ import {
     IServiceManager,
     IReviewService,
     IAuthenticationService,
+    IUserService,
     IService
 } from "./_namespace";
 
@@ -17,11 +18,13 @@ export class ServiceManager implements IServiceManager {
 
     constructor (
         @inject("IReviewService") reviewService: IReviewService,
-        @inject("IAuthenticationService") authenticationService: IAuthenticationService
+        @inject("IAuthenticationService") authenticationService: IAuthenticationService,
+        @inject("IUserService") userService: IUserService
     ) {
         this._containedServices = [
             reviewService,
-            authenticationService
+            authenticationService,
+            userService
         ];
     }
 
