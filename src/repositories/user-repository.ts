@@ -16,7 +16,8 @@ export class UserRepository implements IUserRepository {
             username: "jameskmonger",
             password: "correct",
             firstName: "James",
-            lastName: "Monger"
+            lastName: "Monger",
+            profileImage: "https://avatars0.githubusercontent.com/u/2037007?v=3&s=460"
         });
 
         this._users.push(<UserModel> {
@@ -24,7 +25,8 @@ export class UserRepository implements IUserRepository {
             username: "james.richford",
             password: "correct",
             firstName: "James",
-            lastName: "Richford"
+            lastName: "Richford",
+            profileImage: "https://avatars2.githubusercontent.com/u/8244919?v=3&s=460"
         });
 
         this._users.push(<UserModel> {
@@ -32,7 +34,8 @@ export class UserRepository implements IUserRepository {
             username: "jf",
             password: "correct",
             firstName: "James",
-            lastName: "Finnerty"
+            lastName: "Finnerty",
+            profileImage: "https://avatars0.githubusercontent.com/u/4427207?v=3&s=460"
         });
     }
 

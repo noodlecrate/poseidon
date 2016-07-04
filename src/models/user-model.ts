@@ -7,5 +7,6 @@ export class UserModel implements IModel {
     password: string;
     firstName: string;
     lastName: string;
+    profileImage: string;
 
 }

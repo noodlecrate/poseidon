@@ -30,7 +30,7 @@ export class AuthenticationManager implements IAuthenticationManager {
         });
 
         this._passport.deserializeUser((id, done) => {
-            done(null, this._userManager.getById(id));
+            done(null, this._userManager.getModelById(id));
         });
 
         this._passport.use('local-login', new LocalStrategy((username, password, done) => {

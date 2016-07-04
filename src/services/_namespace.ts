@@ -9,9 +9,13 @@ import { ReviewService } from "./review-service";
 import { IAuthenticationService } from "./_interfaces/authentication-service.i";
 import { AuthenticationService } from "./authentication-service";
 
+import { IUserService } from "./_interfaces/user-service.i";
+import { UserService } from "./user-service";
+
 export {
     IServiceManager, ServiceManager,
     IService,
     IReviewService, ReviewService,
-    IAuthenticationService, AuthenticationService
+    IAuthenticationService, AuthenticationService,
+    IUserService, UserService
 };
