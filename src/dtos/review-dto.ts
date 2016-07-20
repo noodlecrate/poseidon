@@ -1,11 +1,11 @@
-import { UserDto } from "./_namespace";
+import { UserDto } from './_namespace';
 
 export class ReviewDto {
 
-    id: number;
-    author: UserDto;
-    title: string;
-    body: string;
-    imageUrl: string;
+    public id: number;
+    public author: UserDto;
+    public title: string;
+    public body: string;
+    public imageUrl: string;
 
 }
