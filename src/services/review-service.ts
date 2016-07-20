@@ -1,7 +1,7 @@
 /// <reference path="../../typings/index.d.ts"/>
 
 import { inject, injectable } from "inversify";
-import { Express } from "express-serve-static-core";
+import { Express, Request, Response } from "express-serve-static-core";
 
 import { IReviewManager } from "../managers/_namespace";
 import { IReviewService } from "./_namespace";
@@ -22,11 +22,11 @@ export class ReviewService implements IReviewService {
         app.get('/reviews/:id', this._getById.bind(this));
     }
 
-    private _getAll(req: any, res: any): any {
+    private _getAll(req: Request, res: Response): void {
         res.send(this._reviewManager.getAll());
     }
 
-    private _getById(req: any, res: any): any {
+    private _getById(req: Request, res: Response): void {
         let requestedId = parseInt(req.params['id']);
 
         res.send(this._reviewManager.getById(requestedId));
