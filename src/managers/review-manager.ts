@@ -1,6 +1,5 @@
 import { inject, injectable } from 'inversify';
 
-import { ReviewModel } from '../models/_namespace';
 import { ReviewDto } from '../dtos/_namespace';
 import { IReviewRepository } from '../repositories/_namespace';
 import { IReviewSerializer } from '../serializers/_namespace';

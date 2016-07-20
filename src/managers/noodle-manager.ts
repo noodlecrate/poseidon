@@ -1,6 +1,5 @@
 import { inject, injectable } from 'inversify';
 
-import { NoodleModel } from '../models/_namespace';
 import { NoodleDto } from '../dtos/_namespace';
 import { INoodleRepository } from '../repositories/_namespace';
 import { INoodleSerializer } from '../serializers/_namespace';
