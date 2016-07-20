@@ -12,10 +12,14 @@ import { AuthenticationService } from "./authentication-service";
 import { IUserService } from "./_interfaces/user-service.i";
 import { UserService } from "./user-service";
 
+import { INoodleService } from "./_interfaces/noodle-service.i";
+import { NoodleService } from "./noodle-service";
+
 export {
-    IServiceManager, ServiceManager,
     IService,
+    IServiceManager, ServiceManager,
     IReviewService, ReviewService,
     IAuthenticationService, AuthenticationService,
-    IUserService, UserService
+    IUserService, UserService,
+    INoodleService, NoodleService
 };
