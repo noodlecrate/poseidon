@@ -8,7 +8,7 @@ import * as cookieParser from 'cookie-parser';
 import * as bodyParser from 'body-parser';
 import * as session from 'express-session';
 
-import kernel from './inversify.config';
+import { kernel } from './inversify.config';
 import { IServiceManager } from './services/_namespace';
 
 const APP_SECRET = 'somesecretkey';
