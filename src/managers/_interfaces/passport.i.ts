@@ -1,7 +1,7 @@
-import { Strategy } from "passport";
-import { Handler as ExpressHandler } from "express";
+import { Strategy } from 'passport';
+import { Handler as ExpressHandler } from 'express';
 
-import { UserModel } from "../../models/_namespace";
+import { UserModel } from '../../models/_namespace';
 
 export interface IPassport {
 

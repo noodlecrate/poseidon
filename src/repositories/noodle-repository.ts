@@ -1,7 +1,7 @@
-import { injectable } from "inversify";
+import { injectable } from 'inversify';
 
-import { INoodleRepository } from "./_namespace";
-import { NoodleModel } from "../models/_namespace";
+import { INoodleRepository } from './_namespace';
+import { NoodleModel } from '../models/_namespace';
 
 @injectable()
 export class NoodleRepository implements INoodleRepository {
@@ -13,12 +13,12 @@ export class NoodleRepository implements INoodleRepository {
 
         this._noodles.push(<NoodleModel> {
             id: 1,
-            name: "Pot Noodle"
+            name: 'Pot Noodle'
         });
 
         this._noodles.push(<NoodleModel> {
             id: 2,
-            name: "James Richford's Spicy Noodles"
+            name: 'James Richford\'s Spicy Noodles'
         });
     }
 

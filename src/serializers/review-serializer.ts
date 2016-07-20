@@ -1,8 +1,8 @@
-import { inject, injectable } from "inversify";
+import { inject, injectable } from 'inversify';
 
-import { IUserSerializer, IReviewSerializer } from "./_namespace";
-import { ReviewModel } from "../models/_namespace";
-import { ReviewDto } from "../dtos/_namespace";
+import { IUserSerializer, IReviewSerializer } from './_namespace';
+import { ReviewModel } from '../models/_namespace';
+import { ReviewDto } from '../dtos/_namespace';
 
 @injectable()
 export class ReviewSerializer implements IReviewSerializer {
@@ -10,7 +10,7 @@ export class ReviewSerializer implements IReviewSerializer {
     private _userSerializer: IUserSerializer;
 
     constructor (
-        @inject("IUserSerializer") userSerializer: IUserSerializer
+        @inject('IUserSerializer') userSerializer: IUserSerializer
     ) {
         this._userSerializer = userSerializer;
     }
@@ -22,7 +22,7 @@ export class ReviewSerializer implements IReviewSerializer {
             body: model.body,
             imageUrl: model.imageUrl,
             author: this._userSerializer.serialize(model.author)
-        }
+        };
     }
 
 }

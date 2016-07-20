@@ -1,11 +1,11 @@
-import { IModel, UserModel } from "./_namespace";
+import { IModel, UserModel } from './_namespace';
 
 export class ReviewModel implements IModel {
 
-    id: number;
-    author: UserModel;
-    title: string;
-    body: string;
-    imageUrl: string;
+    public id: number;
+    public author: UserModel;
+    public title: string;
+    public body: string;
+    public imageUrl: string;
 
 }

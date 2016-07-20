@@ -1,9 +1,9 @@
 export class UserDto {
 
-    id: number;
-    username: string;
-    firstName: string;
-    lastName: string;
-    profileImage: string;
+    public id: number;
+    public username: string;
+    public firstName: string;
+    public lastName: string;
+    public profileImage: string;
 
 }

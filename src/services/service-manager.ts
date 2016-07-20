@@ -1,7 +1,7 @@
-/// <reference path="../../typings/index.d.ts"/>
+/// <reference path='../../typings/index.d.ts'/>
 
-import { inject, injectable } from "inversify";
-import { Express } from "express-serve-static-core";
+import { inject, injectable } from 'inversify';
+import { Express } from 'express-serve-static-core';
 
 import {
     IServiceManager,
@@ -10,7 +10,7 @@ import {
     IUserService,
     INoodleService,
     IService
-} from "./_namespace";
+} from './_namespace';
 
 @injectable()
 export class ServiceManager implements IServiceManager {
@@ -18,10 +18,10 @@ export class ServiceManager implements IServiceManager {
     private _containedServices: Array<IService>;
 
     constructor (
-        @inject("IReviewService") reviewService: IReviewService,
-        @inject("IAuthenticationService") authenticationService: IAuthenticationService,
-        @inject("IUserService") userService: IUserService,
-        @inject("INoodleService") noodleService: INoodleService
+        @inject('IReviewService') reviewService: IReviewService,
+        @inject('IAuthenticationService') authenticationService: IAuthenticationService,
+        @inject('IUserService') userService: IUserService,
+        @inject('INoodleService') noodleService: INoodleService
     ) {
         this._containedServices = [
             reviewService,

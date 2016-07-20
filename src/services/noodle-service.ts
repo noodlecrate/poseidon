@@ -1,10 +1,10 @@
-/// <reference path="../../typings/index.d.ts"/>
+/// <reference path='../../typings/index.d.ts'/>
 
-import { inject, injectable } from "inversify";
-import { Express, Request, Response } from "express-serve-static-core";
+import { inject, injectable } from 'inversify';
+import { Express, Request, Response } from 'express-serve-static-core';
 
-import { INoodleManager } from "../managers/_namespace";
-import { INoodleService } from "./_namespace";
+import { INoodleManager } from '../managers/_namespace';
+import { INoodleService } from './_namespace';
 
 @injectable()
 export class NoodleService implements INoodleService {
@@ -12,7 +12,7 @@ export class NoodleService implements INoodleService {
     private _noodleManager: INoodleManager;
 
     constructor (
-        @inject("INoodleManager") noodleManager: INoodleManager
+        @inject('INoodleManager') noodleManager: INoodleManager
     ) {
         this._noodleManager = noodleManager;
     }
@@ -22,7 +22,7 @@ export class NoodleService implements INoodleService {
     }
 
     private _getById(req: Request, res: Response): void {
-        let requestedId = parseInt(req.params['id']);
+        let requestedId = parseInt(req.params.id, 10);
 
         res.send(this._noodleManager.getById(requestedId));
     }
