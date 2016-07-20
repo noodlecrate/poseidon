@@ -18,7 +18,7 @@ export class NoodleService implements INoodleService {
     }
 
     public registerRoutes (app: Express) {
-        app.get('/reviews/:id', this._getById.bind(this));
+        app.get('/noodles/:id', this._getById.bind(this));
     }
 
     private _getById(req: any, res: any): any {
