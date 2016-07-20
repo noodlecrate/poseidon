@@ -11,21 +11,24 @@ import {
 
 import {
     IUserRepository, UserRepository,
-    IReviewRepository, ReviewRepository
+    IReviewRepository, ReviewRepository,
+    INoodleRepository, NoodleRepository
 } from "./repositories/_namespace";
 
 import {
     IUserSerializer, UserSerializer,
-    IReviewSerializer, ReviewSerializer
+    IReviewSerializer, ReviewSerializer,
+    INoodleSerializer, NoodleSerializer
 } from "./serializers/_namespace";
 
 import {
     IAuthenticationManager, AuthenticationManager,
     IReviewManager, ReviewManager,
     IUserManager, UserManager,
-    IPassport
+    INoodleManager, NoodleManager
 } from "./managers/_namespace";
 
+import { IPassport } from "./managers/_namespace";
 import * as passport from "passport";
 
 var kernel = new Kernel();
@@ -37,13 +40,16 @@ kernel.bind<IUserService>("IUserService").to(UserService);
 
 kernel.bind<IUserRepository>("IUserRepository").to(UserRepository);
 kernel.bind<IReviewRepository>("IReviewRepository").to(ReviewRepository);
+kernel.bind<INoodleRepository>("INoodleRepository").to(NoodleRepository);
 
 kernel.bind<IUserSerializer>("IUserSerializer").to(UserSerializer);
 kernel.bind<IReviewSerializer>("IReviewSerializer").to(ReviewSerializer);
+kernel.bind<INoodleSerializer>("INoodleSerializer").to(NoodleSerializer);
 
 kernel.bind<IAuthenticationManager>("IAuthenticationManager").to(AuthenticationManager);
 kernel.bind<IReviewManager>("IReviewManager").to(ReviewManager);
 kernel.bind<IUserManager>("IUserManager").to(UserManager);
+kernel.bind<INoodleManager>("INoodleManager").to(NoodleManager);
 
 kernel.bind<IPassport>("IPassport").toConstantValue(passport);
 
