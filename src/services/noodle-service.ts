@@ -1,7 +1,7 @@
 /// <reference path="../../typings/index.d.ts"/>
 
 import { inject, injectable } from "inversify";
-import { Express } from "express-serve-static-core";
+import { Express, Request, Response } from "express-serve-static-core";
 
 import { INoodleManager } from "../managers/_namespace";
 import { INoodleService } from "./_namespace";
@@ -21,7 +21,7 @@ export class NoodleService implements INoodleService {
         app.get('/noodles/:id', this._getById.bind(this));
     }
 
-    private _getById(req: any, res: any): any {
+    private _getById(req: Request, res: Response): void {
         let requestedId = parseInt(req.params['id']);
 
         res.send(this._noodleManager.getById(requestedId));

@@ -1,7 +1,7 @@
 /// <reference path="../../typings/index.d.ts"/>
 
 import { inject, injectable } from "inversify";
-import { Express } from "express-serve-static-core";
+import { Express, Request, Response } from "express-serve-static-core";
 
 import { IUserManager } from "../managers/_namespace";
 import { IUserService } from "./_namespace";
@@ -21,13 +21,13 @@ export class UserService implements IUserService {
         app.get('/users/current', this._loginCheck.bind(this), this._getCurrent.bind(this));
     }
 
-    private _getCurrent (req: any, res: any): any {
+    private _getCurrent (req: Request, res: Response): void {
         let id = req.user.id;
 
         res.send(this._userManager.getById(id));
     }
 
-    private _loginCheck (req: any, res: any, next: any): any {
+    private _loginCheck (req: Request, res: Response, next: Function): void {
         // if user is authenticated in the session, carry on
         if (req.isAuthenticated() && req.user !== undefined)
             return next();
