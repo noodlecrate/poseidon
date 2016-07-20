@@ -1,8 +1,8 @@
-import { injectable } from "inversify";
+import { injectable } from 'inversify';
 
-import { UserModel } from "../models/_namespace";
-import { UserDto } from "../dtos/_namespace";
-import { IUserSerializer } from "./_namespace";
+import { UserModel } from '../models/_namespace';
+import { UserDto } from '../dtos/_namespace';
+import { IUserSerializer } from './_namespace';
 
 @injectable()
 export class UserSerializer implements IUserSerializer {
@@ -14,7 +14,7 @@ export class UserSerializer implements IUserSerializer {
             firstName: model.firstName,
             lastName: model.lastName,
             profileImage: model.profileImage
-        }
+        };
     }
 
 }

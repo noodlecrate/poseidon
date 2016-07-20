@@ -1,5 +1,5 @@
-import { UserModel } from "../../models/_namespace";
-import { UserDto } from "../../dtos/_namespace";
+import { UserModel } from '../../models/_namespace';
+import { UserDto } from '../../dtos/_namespace';
 
 export interface IUserSerializer {
 

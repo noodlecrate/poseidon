@@ -1,8 +1,8 @@
-import { injectable } from "inversify";
+import { injectable } from 'inversify';
 
-import { INoodleSerializer } from "./_namespace";
-import { NoodleModel } from "../models/_namespace";
-import { NoodleDto } from "../dtos/_namespace";
+import { INoodleSerializer } from './_namespace';
+import { NoodleModel } from '../models/_namespace';
+import { NoodleDto } from '../dtos/_namespace';
 
 @injectable()
 export class NoodleSerializer implements INoodleSerializer {
@@ -11,7 +11,7 @@ export class NoodleSerializer implements INoodleSerializer {
         return <NoodleDto> {
             id: model.id,
             name: model.name
-        }
+        };
     }
 
 }
