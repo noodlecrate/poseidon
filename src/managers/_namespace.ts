@@ -9,9 +9,13 @@ import { UserManager } from "./user-manager";
 import { IAuthenticationManager } from "./_interfaces/authentication-manager.i";
 import { AuthenticationManager } from "./authentication-manager";
 
+import { INoodleManager } from "./_interfaces/noodle-manager.i";
+import { NoodleManager } from "./noodle-manager";
+
 export {
     IPassport,
     IReviewManager, ReviewManager,
     IUserManager, UserManager,
-    IAuthenticationManager, AuthenticationManager
+    IAuthenticationManager, AuthenticationManager,
+    INoodleManager, NoodleManager
 };

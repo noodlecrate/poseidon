@@ -7,8 +7,12 @@ import { ReviewRepository } from "./review-repository";
 import { IUserRepository } from "./_interfaces/user-repository.i";
 import { UserRepository } from "./user-repository";
 
+import { INoodleRepository } from "./_interfaces/noodle-repository.i";
+import { NoodleRepository } from "./noodle-repository";
+
 export {
     IGetAllRepository, IGetByIdRepository,
     IReviewRepository, ReviewRepository,
-    IUserRepository, UserRepository
+    IUserRepository, UserRepository,
+    INoodleRepository, NoodleRepository
 };
