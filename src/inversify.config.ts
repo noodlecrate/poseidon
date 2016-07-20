@@ -6,7 +6,8 @@ import {
     IReviewService, ReviewService,
     IServiceManager, ServiceManager,
     IAuthenticationService, AuthenticationService,
-    IUserService, UserService
+    IUserService, UserService,
+    INoodleService, NoodleService
 } from "./services/_namespace";
 
 import {
@@ -37,6 +38,7 @@ kernel.bind<IServiceManager>("IServiceManager").to(ServiceManager);
 kernel.bind<IReviewService>("IReviewService").to(ReviewService);
 kernel.bind<IAuthenticationService>("IAuthenticationService").to(AuthenticationService);
 kernel.bind<IUserService>("IUserService").to(UserService);
+kernel.bind<INoodleService>("INoodleService").to(NoodleService);
 
 kernel.bind<IUserRepository>("IUserRepository").to(UserRepository);
 kernel.bind<IReviewRepository>("IReviewRepository").to(ReviewRepository);
