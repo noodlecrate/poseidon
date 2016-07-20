@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -p src",
-    "start": "node ./build/server.js"
+    "start": "node ./build/server.js",
+    "lint": "tslint \"src/**/*.ts\""
   },
   "repository": {
     "type": "git",
