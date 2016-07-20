@@ -1,10 +1,10 @@
-/// <reference path="../../typings/index.d.ts"/>
+/// <reference path='../../typings/index.d.ts'/>
 
-import { inject, injectable } from "inversify";
-import { Express, Request, Response, NextFunction } from "express-serve-static-core";
+import { inject, injectable } from 'inversify';
+import { Express, Request, Response, NextFunction } from 'express-serve-static-core';
 
-import { IAuthenticationService } from "./_namespace";
-import { IAuthenticationManager, IPassport } from "../managers/_namespace";
+import { IAuthenticationService } from './_namespace';
+import { IAuthenticationManager, IPassport } from '../managers/_namespace';
 
 @injectable()
 export class AuthenticationService implements IAuthenticationService {
@@ -12,8 +12,8 @@ export class AuthenticationService implements IAuthenticationService {
     private _passport: IPassport;
 
     constructor (
-        @inject("IAuthenticationManager") authenticationManager: IAuthenticationManager,
-        @inject("IPassport") passport: IPassport
+        @inject('IAuthenticationManager') authenticationManager: IAuthenticationManager,
+        @inject('IPassport') passport: IPassport
     ) {
         this._passport = passport;
         authenticationManager.setupPassport();
@@ -30,7 +30,7 @@ export class AuthenticationService implements IAuthenticationService {
             }
 
             if (!user) {
-                return next(new Error("No user found."));
+                return next(new Error('No user found.'));
             }
 
             req.logIn(user, (err) => {
@@ -38,7 +38,7 @@ export class AuthenticationService implements IAuthenticationService {
                     return next(err);
                 }
 
-                console.log("successful login");
+                console.log('successful login');
 
                 return res.sendStatus(201);
             });

@@ -1,10 +1,10 @@
-/// <reference path="../../typings/index.d.ts"/>
+/// <reference path='../../typings/index.d.ts'/>
 
-import { inject, injectable } from "inversify";
-import { Express, Request, Response } from "express-serve-static-core";
+import { inject, injectable } from 'inversify';
+import { Express, Request, Response } from 'express-serve-static-core';
 
-import { IUserManager } from "../managers/_namespace";
-import { IUserService } from "./_namespace";
+import { IUserManager } from '../managers/_namespace';
+import { IUserService } from './_namespace';
 
 @injectable()
 export class UserService implements IUserService {
@@ -12,7 +12,7 @@ export class UserService implements IUserService {
     private _userManager: IUserManager;
 
     constructor (
-        @inject("IUserManager") userManager: IUserManager
+        @inject('IUserManager') userManager: IUserManager
     ) {
         this._userManager = userManager;
     }
@@ -29,8 +29,9 @@ export class UserService implements IUserService {
 
     private _loginCheck (req: Request, res: Response, next: Function): void {
         // if user is authenticated in the session, carry on
-        if (req.isAuthenticated() && req.user !== undefined)
+        if (req.isAuthenticated() && req.user !== undefined) {
             return next();
+        }
 
         // if they aren't redirect them to the home page
         res.sendStatus(401);
