@@ -1,7 +1,7 @@
-import { injectable } from "inversify";
+import { injectable } from 'inversify';
 
-import { IUserRepository } from "./_namespace";
-import { UserModel } from "../models/_namespace";
+import { IUserRepository } from './_namespace';
+import { UserModel } from '../models/_namespace';
 
 @injectable()
 export class UserRepository implements IUserRepository {
@@ -13,29 +13,29 @@ export class UserRepository implements IUserRepository {
 
         this._users.push(<UserModel> {
             id: 1,
-            username: "jameskmonger",
-            password: "correct",
-            firstName: "James",
-            lastName: "Monger",
-            profileImage: "https://avatars0.githubusercontent.com/u/2037007?v=3&s=460"
+            username: 'jameskmonger',
+            password: 'correct',
+            firstName: 'James',
+            lastName: 'Monger',
+            profileImage: 'https://avatars0.githubusercontent.com/u/2037007?v=3&s=460'
         });
 
         this._users.push(<UserModel> {
             id: 2,
-            username: "james.richford",
-            password: "correct",
-            firstName: "James",
-            lastName: "Richford",
-            profileImage: "https://avatars2.githubusercontent.com/u/8244919?v=3&s=460"
+            username: 'james.richford',
+            password: 'correct',
+            firstName: 'James',
+            lastName: 'Richford',
+            profileImage: 'https://avatars2.githubusercontent.com/u/8244919?v=3&s=460'
         });
 
         this._users.push(<UserModel> {
             id: 3,
-            username: "jf",
-            password: "correct",
-            firstName: "James",
-            lastName: "Finnerty",
-            profileImage: "https://avatars0.githubusercontent.com/u/4427207?v=3&s=460"
+            username: 'jf',
+            password: 'correct',
+            firstName: 'James',
+            lastName: 'Finnerty',
+            profileImage: 'https://avatars0.githubusercontent.com/u/4427207?v=3&s=460'
         });
     }
 
