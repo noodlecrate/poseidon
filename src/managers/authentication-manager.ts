@@ -1,14 +1,14 @@
-/// <reference path="../../typings/index.d.ts"/>
+/// <reference path='../../typings/index.d.ts'/>
 
-import { inject, injectable } from "inversify";
+import { inject, injectable } from 'inversify';
 
-import { Strategy as LocalStrategy } from "passport-local";
+import { Strategy as LocalStrategy } from 'passport-local';
 
 import {
     IPassport,
     IUserManager,
     IAuthenticationManager
-} from "./_namespace";
+} from './_namespace';
 
 @injectable()
 export class AuthenticationManager implements IAuthenticationManager {
@@ -17,8 +17,8 @@ export class AuthenticationManager implements IAuthenticationManager {
     private _userManager: IUserManager;
 
     constructor (
-        @inject("IPassport") passport: IPassport,
-        @inject("IUserManager") userManager: IUserManager
+        @inject('IPassport') passport: IPassport,
+        @inject('IUserManager') userManager: IUserManager
     ) {
         this._passport = passport;
         this._userManager = userManager;
@@ -38,7 +38,7 @@ export class AuthenticationManager implements IAuthenticationManager {
 
             if (!user) {
                 return done (
-                    new Error("Invalid username or password")
+                    new Error('Invalid username or password')
                 );
             }
 
