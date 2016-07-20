@@ -1,3 +1,5 @@
+import { Strategy } from "passport";
+
 import { UserModel } from "../../models/_namespace";
 
 export interface IPassport {
@@ -12,12 +14,12 @@ export interface IPassport {
 
     use(
         name: string,
-        strategy: any
+        strategy: Strategy
     ): void;
 
     authenticate(
-        strategy: any,
-        callback: any
+        strategy: Strategy,
+        callback: Function
     ): any;
 
 }
