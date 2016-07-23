@@ -10,9 +10,13 @@ import { UserRepository } from './user-repository';
 import { INoodleRepository } from './_interfaces/noodle-repository.i';
 import { NoodleRepository } from './noodle-repository';
 
+import { IBrandRepository } from './_interfaces/brand-repository.i';
+import { BrandRepository } from './brand-repository';
+
 export {
     IGetAllRepository, IGetByIdRepository,
     IReviewRepository, ReviewRepository,
     IUserRepository, UserRepository,
-    INoodleRepository, NoodleRepository
+    INoodleRepository, NoodleRepository,
+    IBrandRepository, BrandRepository
 };
