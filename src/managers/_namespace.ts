@@ -12,10 +12,14 @@ import { AuthenticationManager } from './authentication-manager';
 import { INoodleManager } from './_interfaces/noodle-manager.i';
 import { NoodleManager } from './noodle-manager';
 
+import { IBrandManager } from './_interfaces/brand-manager.i';
+import { BrandManager } from './brand-manager';
+
 export {
     IPassport,
     IReviewManager, ReviewManager,
     IUserManager, UserManager,
     IAuthenticationManager, AuthenticationManager,
-    INoodleManager, NoodleManager
+    INoodleManager, NoodleManager,
+    IBrandManager, BrandManager
 };
