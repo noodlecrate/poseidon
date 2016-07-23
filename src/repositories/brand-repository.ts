@@ -18,7 +18,7 @@ export class BrandRepository implements IBrandRepository {
 
         this._brands.push(<BrandModel> {
             id: 2,
-            name: 'James Richford Food Co.'
+            name: 'James Richford\'s Food Co.'
         });
     }
 
