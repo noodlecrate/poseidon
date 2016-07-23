@@ -7,8 +7,12 @@ import { UserSerializer } from './user-serializer';
 import { INoodleSerializer } from './_interfaces/noodle-serializer.i';
 import { NoodleSerializer } from './noodle-serializer';
 
+import { IBrandSerializer } from './_interfaces/brand-serializer.i';
+import { BrandSerializer } from './brand-serializer';
+
 export {
     IReviewSerializer, ReviewSerializer,
     IUserSerializer, UserSerializer,
-    INoodleSerializer, NoodleSerializer
+    INoodleSerializer, NoodleSerializer,
+    IBrandSerializer, BrandSerializer
 };
