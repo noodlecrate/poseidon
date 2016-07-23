@@ -39,6 +39,7 @@
         "managers/user-manager.ts",
         "models/_interfaces/model.i.ts",
         "models/_namespace.ts",
+        "models/brand-model.ts",
         "models/noodle-model.ts",
         "models/review-model.ts",
         "models/user-model.ts",
