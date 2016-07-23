@@ -12,11 +12,11 @@ export class NoodleManager implements INoodleManager {
     private _noodleSerializer: INoodleSerializer;
 
     constructor (
-        @inject('INoodleRepository') reviewRepository: INoodleRepository,
-        @inject('INoodleSerializer') reviewSerializer: INoodleSerializer
+        @inject('INoodleRepository') noodleRepository: INoodleRepository,
+        @inject('INoodleSerializer') noodleSerializer: INoodleSerializer
     ) {
-        this._noodleRepository = reviewRepository;
-        this._noodleSerializer = reviewSerializer;
+        this._noodleRepository = noodleRepository;
+        this._noodleSerializer = noodleSerializer;
     }
 
     public getById(id: number): NoodleDto {

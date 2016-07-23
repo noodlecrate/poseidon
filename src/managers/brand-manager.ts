@@ -12,11 +12,11 @@ export class BrandManager implements IBrandManager {
     private _brandSerializer: IBrandSerializer;
 
     constructor (
-        @inject('IBrandRepository') reviewRepository: IBrandRepository,
-        @inject('IBrandSerializer') reviewSerializer: IBrandSerializer
+        @inject('IBrandRepository') brandRepository: IBrandRepository,
+        @inject('IBrandSerializer') brandSerializer: IBrandSerializer
     ) {
-        this._brandRepository = reviewRepository;
-        this._brandSerializer = reviewSerializer;
+        this._brandRepository = brandRepository;
+        this._brandSerializer = brandSerializer;
     }
 
     public getById(id: number): BrandDto {
