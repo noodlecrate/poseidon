@@ -70,6 +70,7 @@
         "serializers/review-serializer.ts",
         "serializers/user-serializer.ts",
         "server.ts",
+        "services/_bindings.ts",
         "services/_interfaces/authentication-service.i.ts",
         "services/_interfaces/brand-service.i.ts",
         "services/_interfaces/noodle-service.i.ts",
