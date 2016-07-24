@@ -59,6 +59,7 @@
         "repositories/noodle-repository.ts",
         "repositories/review-repository.ts",
         "repositories/user-repository.ts",
+        "serializers/_bindings.ts",
         "serializers/_interfaces/brand-serializer.i.ts",
         "serializers/_interfaces/noodle-serializer.i.ts",
         "serializers/_interfaces/review-serializer.i.ts",
