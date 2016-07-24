@@ -15,11 +15,15 @@ import { UserService } from './user-service';
 import { INoodleService } from './_interfaces/noodle-service.i';
 import { NoodleService } from './noodle-service';
 
+import { IBrandService } from './_interfaces/brand-service.i';
+import { BrandService } from './brand-service';
+
 export {
     IService,
     IServiceManager, ServiceManager,
     IReviewService, ReviewService,
     IAuthenticationService, AuthenticationService,
     IUserService, UserService,
-    INoodleService, NoodleService
+    INoodleService, NoodleService,
+    IBrandService, BrandService
 };
