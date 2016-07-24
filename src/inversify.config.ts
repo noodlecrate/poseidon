@@ -25,18 +25,14 @@ import {
     IBrandSerializer, BrandSerializer
 } from './serializers/_namespace';
 
-import {
-    IAuthenticationManager, AuthenticationManager,
-    IReviewManager, ReviewManager,
-    IUserManager, UserManager,
-    INoodleManager, NoodleManager,
-    IBrandManager, BrandManager
-} from './managers/_namespace';
+import { BindingGroup as ManagerBindingGroup } from './managers/_bindings';
 
 import { IPassport } from './managers/_namespace';
 import * as passport from 'passport';
 
 let kernel = new Kernel();
+
+new ManagerBindingGroup().registerBindings(kernel);
 
 kernel.bind<IServiceManager>('IServiceManager').to(ServiceManager);
 kernel.bind<IReviewService>('IReviewService').to(ReviewService);
@@ -54,12 +50,6 @@ kernel.bind<IUserSerializer>('IUserSerializer').to(UserSerializer);
 kernel.bind<IReviewSerializer>('IReviewSerializer').to(ReviewSerializer);
 kernel.bind<INoodleSerializer>('INoodleSerializer').to(NoodleSerializer);
 kernel.bind<IBrandSerializer>('IBrandSerializer').to(BrandSerializer);
-
-kernel.bind<IAuthenticationManager>('IAuthenticationManager').to(AuthenticationManager);
-kernel.bind<IReviewManager>('IReviewManager').to(ReviewManager);
-kernel.bind<IUserManager>('IUserManager').to(UserManager);
-kernel.bind<INoodleManager>('INoodleManager').to(NoodleManager);
-kernel.bind<IBrandManager>('IBrandManager').to(BrandManager);
 
 kernel.bind<IPassport>('IPassport').toConstantValue(passport);
 

@@ -21,12 +21,14 @@
         "!node_modules/**"
     ],
     "files": [
+        "binding-group.i.ts",
         "dtos/_namespace.ts",
         "dtos/brand-dto.ts",
         "dtos/noodle-dto.ts",
         "dtos/review-dto.ts",
         "dtos/user-dto.ts",
         "inversify.config.ts",
+        "managers/_bindings.ts",
         "managers/_interfaces/authentication-manager.i.ts",
         "managers/_interfaces/brand-manager.i.ts",
         "managers/_interfaces/noodle-manager.i.ts",
