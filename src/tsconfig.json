@@ -21,7 +21,6 @@
         "!node_modules/**"
     ],
     "files": [
-        "binding-group.i.ts",
         "dtos/_namespace.ts",
         "dtos/brand-dto.ts",
         "dtos/noodle-dto.ts",
