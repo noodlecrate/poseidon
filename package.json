@@ -2,7 +2,7 @@
   "name": "noodlecrate-poseidon",
   "version": "0.0.1",
   "description": "Noodlecrate's Poseidon platform.",
-  "main": "index.js",
+  "main": "build/server.js",
   "scripts": {
     "build": "tsc -p src",
     "start": "node ./build/server.js",
