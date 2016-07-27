@@ -26,6 +26,7 @@
         "dtos/noodle-dto.ts",
         "dtos/review-dto.ts",
         "dtos/user-dto.ts",
+        "index.ts",
         "inversify.config.ts",
         "managers/_bindings.ts",
         "managers/_interfaces/authentication-manager.i.ts",
