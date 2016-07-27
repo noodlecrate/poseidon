@@ -1,7 +1,7 @@
 {
-  "name": "poseidon",
+  "name": "noodlecrate-poseidon",
   "version": "0.0.1",
-  "description": "",
+  "description": "Noodlecrate's Poseidon platform.",
   "main": "index.js",
   "scripts": {
     "build": "tsc -p src",
@@ -12,8 +12,8 @@
     "type": "git",
     "url": "git+https://github.com/noodlecrate/poseidon.git"
   },
-  "author": "",
-  "license": "UNLICENSED",
+  "author": "Noodlecrate (https://github.com/noodlecrate)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/noodlecrate/poseidon/issues"
   },
