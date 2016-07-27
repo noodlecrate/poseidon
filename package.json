@@ -7,7 +7,8 @@
     "build": "tsc -p src",
     "start": "node ./build/server.js",
     "lint": "tslint \"src/**/*.ts\"",
-    "review": "npm run lint && npm run build"
+    "review": "npm run lint && npm run build",
+    "prepublish": "npm run review"
   },
   "repository": {
     "type": "git",
