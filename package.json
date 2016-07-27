@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc -p src",
     "start": "node ./build/server.js",
-    "lint": "tslint \"src/**/*.ts\""
+    "lint": "tslint \"src/**/*.ts\"",
+    "review": "npm run lint && npm run build"
   },
   "repository": {
     "type": "git",
