@@ -36,3 +36,5 @@ jspm_packages
 typings
 build
 build-test
+
+src/**/*.js
