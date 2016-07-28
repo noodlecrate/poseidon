@@ -5,13 +5,13 @@ import * as RepositoriesNamespace from './repositories/_namespace';
 import * as SerializersNamespace from './serializers/_namespace';
 import * as ServicesNamespace from './services/_namespace';
 
-exports = {
+export {
 
-    DTOs: DTOsNamespace,
-    Managers: ManagersNamespace,
-    Models: ModelsNamespace,
-    Repositories: RepositoriesNamespace,
-    Serializers: SerializersNamespace,
-    Services: ServicesNamespace
+    DTOsNamespace as DTOs,
+    ManagersNamespace as Managers,
+    ModelsNamespace as Models,
+    RepositoriesNamespace as Repositories,
+    SerializersNamespace as Serializers,
+    ServicesNamespace as Services
 
 };
