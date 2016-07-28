@@ -1,7 +1,8 @@
+import { Models } from 'noodlecrate-poseidon-entities';
+
 import { IGetAllRepository, IGetByIdRepository } from '../_namespace';
-import { ReviewModel } from '../../models/_namespace';
 
 export interface IReviewRepository
-    extends IGetAllRepository<ReviewModel>, IGetByIdRepository<ReviewModel> {
+    extends IGetAllRepository<Models.ReviewModel>, IGetByIdRepository<Models.ReviewModel> {
 
 }

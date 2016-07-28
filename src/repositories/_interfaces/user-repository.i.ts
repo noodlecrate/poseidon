@@ -1,9 +1,10 @@
+import { Models } from 'noodlecrate-poseidon-entities';
+
 import { IGetAllRepository, IGetByIdRepository } from '../_namespace';
-import { UserModel } from '../../models/_namespace';
 
 export interface IUserRepository
-    extends IGetAllRepository<UserModel>, IGetByIdRepository<UserModel> {
+    extends IGetAllRepository<Models.UserModel>, IGetByIdRepository<Models.UserModel> {
 
-    getByUsername(username: string): UserModel;
+    getByUsername(username: string): Models.UserModel;
 
 }
