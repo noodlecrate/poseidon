@@ -1,16 +1,15 @@
 import { Strategy } from 'passport';
 import { Handler as ExpressHandler } from 'express';
-
-import { UserModel } from '../../models/_namespace';
+import { Models } from 'noodlecrate-poseidon-entities';
 
 export interface IPassport {
 
     serializeUser(
-        callback: (user: UserModel, done: (error: Error, userId: number) => void) => void
+        callback: (user: Models.UserModel, done: (error: Error, userId: number) => void) => void
     ): void;
 
     deserializeUser(
-        callback: (userId: number, done: (error: Error, user: UserModel) => void) => void
+        callback: (userId: number, done: (error: Error, user: Models.UserModel) => void) => void
     ): void;
 
     use(
