@@ -1,13 +1,13 @@
 import { inject, injectable } from 'inversify';
 
+import { Models } from 'noodlecrate-poseidon-entities';
 import { IReviewRepository, IUserRepository } from './_namespace';
-import { ReviewModel } from '../models/_namespace';
 
 @injectable()
 export class ReviewRepository implements IReviewRepository {
 
     private _userRepository: IUserRepository;
-    private _reviews: Array<ReviewModel>;
+    private _reviews: Array<Models.ReviewModel>;
 
     constructor (
         @inject('IUserRepository') userRepository: IUserRepository
@@ -16,7 +16,7 @@ export class ReviewRepository implements IReviewRepository {
 
         this._reviews = [];
 
-        this._reviews.push(<ReviewModel> {
+        this._reviews.push(<Models.ReviewModel> {
             id: 1,
             author: this._userRepository.getById(1),
             title: 'Great noodles, top class.',
@@ -24,7 +24,7 @@ export class ReviewRepository implements IReviewRepository {
             imageUrl: 'https://i.ytimg.com/vi/XutaTTNihe0/hqdefault.jpg'
         });
 
-        this._reviews.push(<ReviewModel> {
+        this._reviews.push(<Models.ReviewModel> {
             id: 2,
             author: this._userRepository.getById(2),
             title: 'Not a fan',
@@ -32,7 +32,7 @@ export class ReviewRepository implements IReviewRepository {
             imageUrl: 'http://i.dailymail.co.uk/i/pix/2014/09/03/article-2740204-1C5E561F00000578-366_634x626.jpg'
         });
 
-        this._reviews.push(<ReviewModel> {
+        this._reviews.push(<Models.ReviewModel> {
             id: 3,
             author: this._userRepository.getById(3),
             title: 'They were alright, I suppose...',
@@ -41,11 +41,11 @@ export class ReviewRepository implements IReviewRepository {
         });
     }
 
-    public getAll(): Array<ReviewModel> {
+    public getAll(): Array<Models.ReviewModel> {
         return this._reviews;
     }
 
-    public getById(id: number): ReviewModel {
+    public getById(id: number): Models.ReviewModel {
         return this._reviews.filter(
             r => r.id === id
         )[0];
