@@ -1,8 +1,8 @@
-import { ReviewDto } from '../../dtos/_namespace';
+import { DTOs } from 'noodlecrate-poseidon-entities';
 
 export interface IReviewManager {
 
-    getAll(): Array<ReviewDto>;
-    getById(id: number): ReviewDto;
+    getAll(): Array<DTOs.ReviewDto>;
+    getById(id: number): DTOs.ReviewDto;
 
 }

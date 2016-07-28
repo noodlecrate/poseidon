@@ -1,7 +1,7 @@
-import { NoodleDto } from '../../dtos/_namespace';
+import { DTOs } from 'noodlecrate-poseidon-entities';
 
 export interface INoodleManager {
 
-    getById(id: number): NoodleDto;
+    getById(id: number): DTOs.NoodleDto;
 
 }

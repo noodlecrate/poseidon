@@ -1,7 +1,7 @@
-import { BrandDto } from '../../dtos/_namespace';
+import { DTOs } from 'noodlecrate-poseidon-entities';
 
 export interface IBrandManager {
 
-    getById(id: number): BrandDto;
+    getById(id: number): DTOs.BrandDto;
 
 }
