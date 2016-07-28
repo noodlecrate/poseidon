@@ -1,6 +1,6 @@
-import { IModel } from '../../models/_namespace';
+import { Models } from 'noodlecrate-poseidon-entities';
 
-export interface IGetByIdRepository <TModel extends IModel> {
+export interface IGetByIdRepository <TModel extends Models.IModel> {
 
     getById(id: number): TModel;
 
