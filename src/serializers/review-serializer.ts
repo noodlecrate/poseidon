@@ -1,8 +1,7 @@
 import { inject, injectable } from 'inversify';
 
+import { Models, DTOs } from 'noodlecrate-poseidon-entities';
 import { IUserSerializer, IReviewSerializer } from './_namespace';
-import { ReviewModel } from '../models/_namespace';
-import { ReviewDto } from '../dtos/_namespace';
 
 @injectable()
 export class ReviewSerializer implements IReviewSerializer {
@@ -15,8 +14,8 @@ export class ReviewSerializer implements IReviewSerializer {
         this._userSerializer = userSerializer;
     }
 
-    public serialize (model: ReviewModel): ReviewDto {
-        return <ReviewDto> {
+    public serialize (model: Models.ReviewModel): DTOs.ReviewDto {
+        return <DTOs.ReviewDto> {
             id: model.id,
             title: model.title,
             body: model.body,

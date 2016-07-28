@@ -1,14 +1,13 @@
 import { injectable } from 'inversify';
 
+import { Models, DTOs } from 'noodlecrate-poseidon-entities';
 import { INoodleSerializer } from './_namespace';
-import { NoodleModel } from '../models/_namespace';
-import { NoodleDto } from '../dtos/_namespace';
 
 @injectable()
 export class NoodleSerializer implements INoodleSerializer {
 
-    public serialize (model: NoodleModel): NoodleDto {
-        return <NoodleDto> {
+    public serialize (model: Models.NoodleModel): DTOs.NoodleDto {
+        return <DTOs.NoodleDto> {
             id: model.id,
             name: model.name
         };

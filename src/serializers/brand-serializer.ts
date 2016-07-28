@@ -1,14 +1,13 @@
 import { injectable } from 'inversify';
 
+import { Models, DTOs } from 'noodlecrate-poseidon-entities';
 import { IBrandSerializer } from './_namespace';
-import { BrandModel } from '../models/_namespace';
-import { BrandDto } from '../dtos/_namespace';
 
 @injectable()
 export class BrandSerializer implements IBrandSerializer {
 
-    public serialize (model: BrandModel): BrandDto {
-        return <BrandDto> {
+    public serialize (model: Models.BrandModel): DTOs.BrandDto {
+        return <DTOs.BrandDto> {
             id: model.id,
             name: model.name
         };

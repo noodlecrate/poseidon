@@ -1,14 +1,13 @@
 import { injectable } from 'inversify';
 
-import { UserModel } from '../models/_namespace';
-import { UserDto } from '../dtos/_namespace';
+import { Models, DTOs } from 'noodlecrate-poseidon-entities';
 import { IUserSerializer } from './_namespace';
 
 @injectable()
 export class UserSerializer implements IUserSerializer {
 
-    public serialize (model: UserModel): UserDto {
-        return <UserDto> {
+    public serialize (model: Models.UserModel): DTOs.UserDto {
+        return <DTOs.UserDto> {
             id: model.id,
             username: model.username,
             firstName: model.firstName,
