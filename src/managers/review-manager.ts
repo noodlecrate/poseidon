@@ -1,6 +1,6 @@
 import { inject, injectable } from 'inversify';
 
-import { ReviewDto } from '../dtos/_namespace';
+import { DTOs } from 'noodlecrate-poseidon-entities';
 import { IReviewRepository } from '../repositories/_namespace';
 import { IReviewSerializer } from '../serializers/_namespace';
 import { IReviewManager } from './_namespace';
@@ -19,8 +19,8 @@ export class ReviewManager implements IReviewManager {
         this._reviewSerializer = reviewSerializer;
     }
 
-    public getAll(): Array<ReviewDto> {
-        let serialized: Array<ReviewDto> = [];
+    public getAll(): Array<DTOs.ReviewDto> {
+        let serialized: Array<DTOs.ReviewDto> = [];
 
         this._reviewRepository.getAll().forEach(
             r => serialized.push(this._reviewSerializer.serialize(r))
@@ -29,7 +29,7 @@ export class ReviewManager implements IReviewManager {
         return serialized;
     }
 
-    public getById(id: number): ReviewDto {
+    public getById(id: number): DTOs.ReviewDto {
         let model = this._reviewRepository.getById(id);
 
         return this._reviewSerializer.serialize(model);

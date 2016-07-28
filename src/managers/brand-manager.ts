@@ -1,6 +1,6 @@
 import { inject, injectable } from 'inversify';
 
-import * as Entities from 'noodlecrate-poseidon-entities';
+import { DTOs } from 'noodlecrate-poseidon-entities';
 import { IBrandRepository } from '../repositories/_namespace';
 import { IBrandSerializer } from '../serializers/_namespace';
 import { IBrandManager } from './_namespace';
@@ -19,7 +19,7 @@ export class BrandManager implements IBrandManager {
         this._brandSerializer = brandSerializer;
     }
 
-    public getById(id: number): Entities.BrandDto {        
+    public getById(id: number): DTOs.BrandDto {
         let model = this._brandRepository.getById(id);
 
         return this._brandSerializer.serialize(model);

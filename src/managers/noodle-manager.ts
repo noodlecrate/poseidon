@@ -1,6 +1,6 @@
 import { inject, injectable } from 'inversify';
 
-import { NoodleDto } from '../dtos/_namespace';
+import { DTOs } from 'noodlecrate-poseidon-entities';
 import { INoodleRepository } from '../repositories/_namespace';
 import { INoodleSerializer } from '../serializers/_namespace';
 import { INoodleManager } from './_namespace';
@@ -19,7 +19,7 @@ export class NoodleManager implements INoodleManager {
         this._noodleSerializer = noodleSerializer;
     }
 
-    public getById(id: number): NoodleDto {
+    public getById(id: number): DTOs.NoodleDto {
         let model = this._noodleRepository.getById(id);
 
         return this._noodleSerializer.serialize(model);

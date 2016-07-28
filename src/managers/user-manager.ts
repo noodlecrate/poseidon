@@ -1,7 +1,6 @@
 import { inject, injectable } from 'inversify';
 
-import { UserDto } from '../dtos/_namespace';
-import { UserModel } from '../models/_namespace';
+import { DTOs, Models } from 'noodlecrate-poseidon-entities';
 import { IUserRepository } from '../repositories/_namespace';
 import { IUserManager } from './_namespace';
 import { IUserSerializer } from '../serializers/_namespace';
@@ -20,7 +19,7 @@ export class UserManager implements IUserManager {
         this._userSerializer = userSerializer;
     }
 
-    public attemptLogin (username: string, password: string): UserModel {
+    public attemptLogin (username: string, password: string): Models.UserModel {
         let matches = this._userRepository.getAll().filter(
             u => u.username === username && u.password === password
         );
@@ -28,11 +27,11 @@ export class UserManager implements IUserManager {
         return matches[0];
     }
 
-    public getModelById (id: number): UserModel {
+    public getModelById (id: number): Models.UserModel {
         return this._userRepository.getById(id);
     }
 
-    public getById (id: number): UserDto {
+    public getById (id: number): DTOs.UserDto {
         let model = this._userRepository.getById(id);
 
         return this._userSerializer.serialize(model);
