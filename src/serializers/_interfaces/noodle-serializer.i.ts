@@ -1,8 +1,7 @@
-import { NoodleModel } from '../../models/_namespace';
-import { NoodleDto } from '../../dtos/_namespace';
+import { Models, DTOs } from 'noodlecrate-poseidon-entities';
 
 export interface INoodleSerializer {
 
-    serialize (model: NoodleModel): NoodleDto;
+    serialize (model: Models.NoodleModel): DTOs.NoodleDto;
 
 }

@@ -1,8 +1,7 @@
-import { UserModel } from '../../models/_namespace';
-import { UserDto } from '../../dtos/_namespace';
+import { Models, DTOs } from 'noodlecrate-poseidon-entities';
 
 export interface IUserSerializer {
 
-    serialize (model: UserModel): UserDto;
+    serialize (model: Models.UserModel): DTOs.UserDto;
 
 }

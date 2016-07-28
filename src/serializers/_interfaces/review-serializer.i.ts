@@ -1,8 +1,7 @@
-import { ReviewModel } from '../../models/_namespace';
-import { ReviewDto } from '../../dtos/_namespace';
+import { Models, DTOs } from 'noodlecrate-poseidon-entities';
 
 export interface IReviewSerializer {
 
-    serialize (model: ReviewModel): ReviewDto;
+    serialize (model: Models.ReviewModel): DTOs.ReviewDto;
 
 }

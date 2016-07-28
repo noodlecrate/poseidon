@@ -1,8 +1,7 @@
-import { BrandModel } from '../../models/_namespace';
-import { BrandDto } from '../../dtos/_namespace';
+import { Models, DTOs } from 'noodlecrate-poseidon-entities';
 
 export interface IBrandSerializer {
 
-    serialize (model: BrandModel): BrandDto;
+    serialize (model: Models.BrandModel): DTOs.BrandDto;
 
 }
