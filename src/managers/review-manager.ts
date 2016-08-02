@@ -1,6 +1,6 @@
 import { inject, injectable } from 'inversify';
 
-import { DTOs, Models } from 'noodlecrate-poseidon-entities';
+import { DTOs } from 'noodlecrate-poseidon-entities';
 import { IReviewRepository } from '../repositories/_namespace';
 import { IReviewSerializer } from '../serializers/_namespace';
 import { IReviewManager, IUserManager } from './_namespace';
@@ -33,13 +33,9 @@ export class ReviewManager implements IReviewManager {
     }
 
     public create(review: DTOs.ReviewCreateDto): DTOs.ReviewDto {
-        let model = <Models.ReviewModel> {
-            id: undefined,
-            author: this._userManager.getModelById(review.authorId),
-            title: review.title,
-            body: review.body,
-            imageUrl: review.imageUrl
-        };
+        let author = this._userManager.getModelById(review.authorId);
+
+        let model = author.createReview(review);
 
         this._reviewRepository.save(model);
 

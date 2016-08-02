@@ -11,32 +11,20 @@ export class UserRepository implements IUserRepository {
     constructor () {
         this._users = [];
 
-        this._users.push(<Models.UserModel> {
-            id: 1,
-            username: 'jameskmonger',
-            password: 'correct',
-            firstName: 'James',
-            lastName: 'Monger',
-            profileImage: 'https://avatars0.githubusercontent.com/u/2037007?v=3&s=460'
-        });
+        this._createUser(1, 'jameskmonger', 'correct', 'James', 'Monger', 'https://avatars0.githubusercontent.com/u/2037007?v=3&s=460');
+        this._createUser(2, 'james.richford', 'correct', 'James', 'Richford', 'https://avatars2.githubusercontent.com/u/8244919?v=3&s=460');
+        this._createUser(3, 'jf', 'correct', 'James', 'Finnerty', 'https://avatars0.githubusercontent.com/u/4427207?v=3&s=460');
+    }
 
-        this._users.push(<Models.UserModel> {
-            id: 2,
-            username: 'james.richford',
-            password: 'correct',
-            firstName: 'James',
-            lastName: 'Richford',
-            profileImage: 'https://avatars2.githubusercontent.com/u/8244919?v=3&s=460'
-        });
-
-        this._users.push(<Models.UserModel> {
-            id: 3,
-            username: 'jf',
-            password: 'correct',
-            firstName: 'James',
-            lastName: 'Finnerty',
-            profileImage: 'https://avatars0.githubusercontent.com/u/4427207?v=3&s=460'
-        });
+    private _createUser(id: number, username: string, password: string, firstName: string, lastName: string, profileImage: string) {
+        let model = new Models.UserModel();
+        model.id = id;
+        model.username = username;
+        model.password = password;
+        model.firstName = firstName;
+        model.lastName = lastName;
+        model.profileImage = profileImage;
+        this._users.push(model);
     }
 
     public getAll(): Array<Models.UserModel> {
