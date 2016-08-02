@@ -32,10 +32,10 @@ export class ReviewManager implements IReviewManager {
         return serialized;
     }
 
-    public create(review: DTOs.ReviewDto): DTOs.ReviewDto {
+    public create(review: DTOs.ReviewCreateDto): DTOs.ReviewDto {
         let model = <Models.ReviewModel> {
             id: undefined,
-            author: this._userManager.getModelById((<any> review).authorId),
+            author: this._userManager.getModelById(review.authorId),
             title: review.title,
             body: review.body,
             imageUrl: review.imageUrl

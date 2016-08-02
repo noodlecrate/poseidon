@@ -19,7 +19,7 @@ export class ReviewService implements IReviewService {
 
     public registerRoutes (app: Express) {
         app.get('/reviews/', this._getAll.bind(this));
-        app.post('/reviews/', this._create.bind(this));
+        app.post('/reviews/', this._isLoggedIn, this._create.bind(this));
         app.get('/reviews/:id', this._getById.bind(this));
     }
 
@@ -35,6 +35,15 @@ export class ReviewService implements IReviewService {
         let requestedId = parseInt(req.params.id, 10);
 
         res.send(this._reviewManager.getById(requestedId));
+    }
+
+    private _isLoggedIn(req: Request, res: Response, next: Function) {
+        // if user is authenticated in the session, carry on
+        if (req.isAuthenticated()) {
+            return next();
+        }
+
+        res.send(401);
     }
 
 }
