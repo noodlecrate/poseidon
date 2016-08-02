@@ -51,4 +51,18 @@ export class ReviewRepository implements IReviewRepository {
         )[0];
     }
 
+    public save(model: Models.ReviewModel): void {
+        // if there is no ID, we need to insert it
+        if (model.id === undefined) {
+            model.id = this._getHighestId() + 1;
+            this._reviews.push(model);
+        }
+    }
+
+    private _getHighestId(): number {
+        let clonedReviews = this._reviews.slice();
+        clonedReviews.sort((a, b) => b.id - a.id);
+        return clonedReviews[0].id;
+    }
+
 }

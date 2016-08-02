@@ -19,11 +19,16 @@ export class ReviewService implements IReviewService {
 
     public registerRoutes (app: Express) {
         app.get('/reviews/', this._getAll.bind(this));
+        app.post('/reviews/', this._create.bind(this));
         app.get('/reviews/:id', this._getById.bind(this));
     }
 
     private _getAll(req: Request, res: Response): void {
         res.send(this._reviewManager.getAll());
+    }
+
+    private _create(req: Request, res: Response): void {
+        res.send(this._reviewManager.create(req.body));
     }
 
     private _getById(req: Request, res: Response): void {

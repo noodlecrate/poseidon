@@ -1,22 +1,25 @@
 import { inject, injectable } from 'inversify';
 
-import { DTOs } from 'noodlecrate-poseidon-entities';
+import { DTOs, Models } from 'noodlecrate-poseidon-entities';
 import { IReviewRepository } from '../repositories/_namespace';
 import { IReviewSerializer } from '../serializers/_namespace';
-import { IReviewManager } from './_namespace';
+import { IReviewManager, IUserManager } from './_namespace';
 
 @injectable()
 export class ReviewManager implements IReviewManager {
 
     private _reviewRepository: IReviewRepository;
     private _reviewSerializer: IReviewSerializer;
+    private _userManager: IUserManager;
 
     constructor (
         @inject('IReviewRepository') reviewRepository: IReviewRepository,
-        @inject('IReviewSerializer') reviewSerializer: IReviewSerializer
+        @inject('IReviewSerializer') reviewSerializer: IReviewSerializer,
+        @inject('IUserManager') userManager: IUserManager
     ) {
         this._reviewRepository = reviewRepository;
         this._reviewSerializer = reviewSerializer;
+        this._userManager = userManager;
     }
 
     public getAll(): Array<DTOs.ReviewDto> {
@@ -27,6 +30,20 @@ export class ReviewManager implements IReviewManager {
         );
 
         return serialized;
+    }
+
+    public create(review: DTOs.ReviewDto): DTOs.ReviewDto {
+        let model = <Models.ReviewModel> {
+            id: undefined,
+            author: this._userManager.getModelById((<any> review).authorId),
+            title: review.title,
+            body: review.body,
+            imageUrl: review.imageUrl
+        };
+
+        this._reviewRepository.save(model);
+
+        return this._reviewSerializer.serialize(model);
     }
 
     public getById(id: number): DTOs.ReviewDto {
