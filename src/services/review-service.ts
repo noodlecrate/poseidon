@@ -43,7 +43,7 @@ export class ReviewService implements IReviewService {
             return next();
         }
 
-        res.send(401);
+        res.sendStatus(401);
     }
 
 }
