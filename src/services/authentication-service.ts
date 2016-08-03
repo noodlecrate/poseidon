@@ -3,7 +3,7 @@
 import { inject, injectable } from 'inversify';
 import { Express, Request, Response, NextFunction } from 'express-serve-static-core';
 
-import { IAuthenticationService } from './_namespace';
+import { IAuthenticationService, IsLoggedInMiddleware } from './_namespace';
 import { IAuthenticationManager, IPassport } from '../managers/_namespace';
 
 @injectable()
@@ -21,6 +21,7 @@ export class AuthenticationService implements IAuthenticationService {
 
     public registerRoutes(app: Express): void {
         app.post('/session', this._authenticationPost.bind(this));
+        app.delete('/session', IsLoggedInMiddleware, this._authenticationDelete.bind(this));
     }
 
     private _authenticationPost(req: Request, res: Response, next: NextFunction): void {
@@ -43,6 +44,10 @@ export class AuthenticationService implements IAuthenticationService {
                 return res.sendStatus(201);
             });
         })(req, res, next);
+    }
+
+    private _authenticationDelete(req: Request, res: Response): void {
+        req.logout();
     }
 
 }

@@ -1,3 +1,5 @@
+import { IsLoggedInMiddleware } from './_is-logged-in-middleware';
+
 import { IServiceManager } from './_interfaces/service-manager.i';
 import { ServiceManager } from './service-manager';
 
@@ -19,7 +21,7 @@ import { IBrandService } from './_interfaces/brand-service.i';
 import { BrandService } from './brand-service';
 
 export {
-    IService,
+    IsLoggedInMiddleware, IService,
     IServiceManager, ServiceManager,
     IReviewService, ReviewService,
     IAuthenticationService, AuthenticationService,

@@ -68,6 +68,7 @@
         "services/_interfaces/service-manager.i.ts",
         "services/_interfaces/service.i.ts",
         "services/_interfaces/user-service.i.ts",
+        "services/_is-logged-in-middleware.ts",
         "services/_namespace.ts",
         "services/authentication-service.ts",
         "services/brand-service.ts",
