@@ -20,6 +20,7 @@ export class ReviewService implements IReviewService {
     public registerRoutes (app: Express) {
         app.get('/reviews/', this._getAll.bind(this));
         app.post('/reviews/', this._isLoggedIn, this._create.bind(this));
+        app.put('/reviews/:id', this._isLoggedIn, this._update.bind(this));
         app.get('/reviews/:id', this._getById.bind(this));
     }
 
@@ -29,6 +30,12 @@ export class ReviewService implements IReviewService {
 
     private _create(req: Request, res: Response): void {
         res.send(this._reviewManager.create(req.body));
+    }
+
+    private _update(req: Request, res: Response): void {
+        let reviewId = parseInt(req.params.id, 10);
+
+        res.send(this._reviewManager.update(reviewId, req.body));
     }
 
     private _getById(req: Request, res: Response): void {
