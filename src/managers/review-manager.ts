@@ -42,6 +42,15 @@ export class ReviewManager implements IReviewManager {
         return this._reviewSerializer.serialize(model);
     }
 
+    public update(id: number, review: DTOs.ReviewCreateDto): DTOs.ReviewDto {
+        let model = this._reviewRepository.getById(id);
+
+        model.update(review);
+        this._reviewRepository.save(model);
+
+        return this._reviewSerializer.serialize(model);
+    }
+
     public getById(id: number): DTOs.ReviewDto {
         let model = this._reviewRepository.getById(id);
 
