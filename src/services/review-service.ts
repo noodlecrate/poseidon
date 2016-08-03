@@ -4,7 +4,7 @@ import { inject, injectable } from 'inversify';
 import { Express, Request, Response } from 'express-serve-static-core';
 
 import { IReviewManager } from '../managers/_namespace';
-import { IReviewService } from './_namespace';
+import { IReviewService, IsLoggedInMiddleware } from './_namespace';
 
 @injectable()
 export class ReviewService implements IReviewService {
@@ -19,8 +19,8 @@ export class ReviewService implements IReviewService {
 
     public registerRoutes (app: Express) {
         app.get('/reviews/', this._getAll.bind(this));
-        app.post('/reviews/', this._isLoggedIn, this._create.bind(this));
-        app.put('/reviews/:id', this._isLoggedIn, this._update.bind(this));
+        app.post('/reviews/', IsLoggedInMiddleware, this._create.bind(this));
+        app.put('/reviews/:id', IsLoggedInMiddleware, this._update.bind(this));
         app.get('/reviews/:id', this._getById.bind(this));
     }
 
@@ -42,15 +42,6 @@ export class ReviewService implements IReviewService {
         let requestedId = parseInt(req.params.id, 10);
 
         res.send(this._reviewManager.getById(requestedId));
-    }
-
-    private _isLoggedIn(req: Request, res: Response, next: Function) {
-        // if user is authenticated in the session, carry on
-        if (req.isAuthenticated()) {
-            return next();
-        }
-
-        res.sendStatus(401);
     }
 
 }
