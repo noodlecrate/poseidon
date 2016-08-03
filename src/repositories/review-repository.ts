@@ -52,10 +52,13 @@ export class ReviewRepository implements IReviewRepository {
     }
 
     public save(model: Models.ReviewModel): void {
-        // if there is no ID, we need to insert it
         if (model.id === undefined) {
+            // if there is no ID, we need to insert it
+
             model.id = this._getHighestId() + 1;
             this._reviews.push(model);
+        } else {
+            // otherwise there is nothing we need to do for now
         }
     }
 
