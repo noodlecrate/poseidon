@@ -38,6 +38,8 @@ export class ReviewRepository implements IReviewRepository {
             imageUrl: imageUrl
         });
 
+        review.id = this._reviews.length + 1;
+
         this._reviews.push(review);
     }
 
