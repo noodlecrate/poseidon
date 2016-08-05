@@ -26,24 +26,22 @@ export class AuthenticationService implements IAuthenticationService {
 
     private _authenticationPost(req: Request, res: Response, next: NextFunction): void {
         this._passport.authenticate('local-login', (err, user, info) => {
-            if (err) {
-                return next(err);
-            }
-
-            if (!user) {
-                return next(new Error('No user found.'));
+            if (err || !user) {
+                return this._sendAuthenticationError(req, res);
             }
 
             req.logIn(user, (err) => {
                 if (err) {
-                    return next(err);
+                    return this._sendAuthenticationError(req, res);
                 }
-
-                console.log('successful login');
 
                 return res.sendStatus(201);
             });
         })(req, res, next);
+    }
+
+    private _sendAuthenticationError(req: Request, res: Response): void {
+        res.sendStatus(401);
     }
 
     private _authenticationDelete(req: Request, res: Response): void {
